@@ -50,6 +50,7 @@
             <div>
               <h3><a [href]="'product/' + p.slug + '/'">{{ p.name }}</a></h3>
               <p class="origin">{{ p.flag }} Made in {{ p.country }} · 50 kg</p>
+              <p class="price">$ {{ p.price }} <span>/ kg</span></p>
               <p>{{ p.text }}</p>
               <details class="specs">
                 <summary>Specifications</summary>
@@ -165,6 +166,7 @@
       <div>
         <p class="eyebrow">{{ page.flag }} Made in {{ page.country }} · 50 kg</p>
         <h1>{{ page.name }}</h1>
+        <p class="price big">$ {{ page.price }} <span>/ kg (USD)</span></p>
         <p class="pop-text">{{ page.text }}</p>
         <h3>Specifications</h3>
         <dl class="pop-specs">

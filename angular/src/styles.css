@@ -185,3 +185,7 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .projects small { color: #e2f0d0; font-size: 13px; }
 .proj-btn { margin-top: 26px; background: #fff; color: var(--navy); }
 @media (max-width: 700px) { .projects { grid-template-columns: 1fr; } }
+.price { font-family: var(--display); font-weight: 800; color: var(--green-dk); font-size: 20px; margin: 2px 0 8px; }
+.price span { font-family: "DM Sans", sans-serif; font-weight: 500; font-size: 13px; color: var(--muted); }
+.price.big { font-size: 30px; margin: 0 0 12px; }
+.price.big span { font-size: 15px; }
