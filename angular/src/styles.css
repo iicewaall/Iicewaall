@@ -172,3 +172,4 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .other span { display: block; padding: 10px 8px; }
 @media (max-width: 900px) { .pop-grid { grid-template-columns: 1fr; } .nutri { grid-template-columns: repeat(2, 1fr); } .others { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 560px) { .nutri { grid-template-columns: 1fr; } .others { grid-template-columns: repeat(2, 1fr); } }
+.nutri li span:empty { display: none; }

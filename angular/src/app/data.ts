@@ -57,7 +57,11 @@ export const products = [
       ] },
     ] },
   { name: "Salmon Protein", slug: "salmon", flag: "🇩🇰", country: "Denmark", text: "Premium salmon protein meal for high-performance aquaculture and animal feed.",
-    specs: [["Source", "Salmon (marine fish)"], ["Protein", "96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "3%"], ["Ash (max)", "15%"], ["Form", "Fish protein meal (fine powder)"], ["Colour", "Light brown"], ["Application", "Aquaculture feed, animal feed"]] },
+    specs: [["Source", "Salmon (marine fish)"], ["Protein", "96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "3%"], ["Ash (max)", "15%"], ["Form", "Fish protein meal (fine powder)"], ["Colour", "Light brown"], ["Application", "Aquaculture feed, animal feed"]],
+    details: [
+      { title: "Essential Amino Acids", items: [["Lysine", ""], ["Methionine", ""], ["Threonine", ""], ["Tryptophan", ""], ["Leucine", ""], ["Isoleucine", ""], ["Valine", ""], ["Histidine", ""], ["Phenylalanine", ""]] },
+      { title: "Other Amino Acids", items: [["Arginine", ""], ["Alanine", ""], ["Asparagine", ""], ["Aspartic Acid", ""], ["Glutamic Acid", ""], ["Glutamine", ""], ["Glycine", ""], ["Proline", ""], ["Serine", ""], ["Tyrosine", ""], ["Cysteine", ""]] },
+    ] },
   { name: "Tuna Protein", slug: "tuna", flag: "🇩🇰", country: "Denmark", text: "Concentrated tuna protein meal for strong growth and better feed conversion.",
     specs: [["Source", "Tuna (marine fish)"], ["Protein", "96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "3%"], ["Ash (max)", "15%"], ["Form", "Fish protein meal (fine powder)"], ["Colour", "Light brown"], ["Application", "Aquaculture feed, animal feed"]] },
   { name: "Herring Protein", slug: "herring", flag: "🇩🇰", country: "Denmark", text: "Herring protein meal, naturally rich in amino acids and highly digestible.",
