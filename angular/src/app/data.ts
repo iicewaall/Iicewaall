@@ -10,7 +10,6 @@ export const nav = [
   { href: "#applications", label: "Applications" },
   { href: "#quality", label: "Quality" },
   { href: "#about", label: "About Us" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export const highlights = [
