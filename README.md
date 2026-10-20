@@ -1,14 +1,15 @@
 # IICE WAALL – Premium Marine Proteins
 
-The IICE WAALL website, built with Next.js 15 (React) as a static site in `nextjs/`.
+The IICE WAALL website, built with Angular 20 in `angular/`.
 
-- Text and products: `nextjs/lib/data.ts`. Set `WHATSAPP` there to turn on the quote form.
-- Images: `nextjs/public/assets/`
+- Text and products: `angular/src/app/data.ts`. Set `WHATSAPP` there to turn on the quote form.
+- Page layout: `angular/src/app/app.html`. Styles: `angular/src/styles.css`.
+- Images: `angular/public/assets/`
 
 ## Run locally
 
 ```bash
-cd nextjs && npm install && npm run dev    # http://localhost:3000
+cd angular && npm install && npm start    # http://localhost:4200
 ```
 
 ## Deploy
