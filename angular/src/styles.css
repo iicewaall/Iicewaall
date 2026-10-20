@@ -145,3 +145,21 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 /* Minimum order note in About Us */
 .moq { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 18px; padding: 10px 16px; border-radius: 12px; background: var(--green); color: #fff; font-size: 17px; }
 .moq span { color: #eef7e2; font-size: 15px; }
+
+/* "View full label" popup */
+.label-btn { margin-top: 6px; padding: 0; border: 0; background: none; cursor: pointer; font: inherit; font-size: 13px; font-weight: 700; color: var(--green-dk); text-decoration: underline; text-align: left; }
+.pop { position: fixed; inset: 0; z-index: 100; background: rgba(20, 35, 10, .6); display: grid; place-items: center; padding: 16px; overflow-y: auto; }
+.pop-box { position: relative; width: min(1000px, 100%); max-height: calc(100vh - 32px); overflow-y: auto; background: #fff; border-radius: 18px; padding: 28px; box-shadow: 0 24px 60px rgba(0, 0, 0, .35); }
+.pop-close { position: sticky; top: 0; float: right; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--ice-2); color: var(--navy); font-size: 26px; line-height: 1; cursor: pointer; }
+.pop-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 28px; align-items: start; }
+.pop-grid img { width: 100%; height: auto; border-radius: 12px; background: var(--ice); }
+.pop-text { color: var(--muted); margin-bottom: 14px; }
+.pop h3 { margin: 6px 0 8px; }
+.pop-specs { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 14px; }
+.pop-specs dt { color: var(--muted); } .pop-specs dd { font-weight: 500; }
+.pop-sec { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); }
+.nutri { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 22px; }
+.nutri li { display: grid; gap: 2px; font-size: 14px; color: var(--muted); padding: 10px 12px; background: var(--ice); border-radius: 10px; }
+.nutri b { color: var(--navy); font-size: 15px; }
+.nutri .pct { font-weight: 700; color: var(--green-dk); }
+@media (max-width: 700px) { .pop-box { padding: 18px; } .pop-grid, .nutri { grid-template-columns: 1fr; } }

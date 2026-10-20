@@ -28,6 +28,11 @@ export class App implements OnInit, OnDestroy {
     { src: 'slide-7', alt: 'Research and quality reference: Nofima marine ingredients expertise, Norway (photo: Nofima)' },
   ];
   protected readonly slide = signal(0);
+
+  // Product popup opened by "View full label"
+  protected readonly open = signal<(typeof products)[number] | null>(null);
+  protected details(p: (typeof products)[number]): { title: string; items: string[][] }[] { return ('details' in p && p.details) || []; }
+  @HostListener('document:keydown.escape') closePopup() { this.open.set(null); }
   protected paused = false;
   private timer?: ReturnType<typeof setInterval>;
 
