@@ -1,4 +1,4 @@
-// Site content in one place: edit products and applications here.
+// Site content in one place: edit products, applications and quality points here.
 
 // WhatsApp number for the quote form, international format without "+" (e.g. "919876543210").
 // Leave empty until it is known; the form then shows a message instead of opening WhatsApp.
@@ -8,7 +8,8 @@ export const nav = [
   { href: "./", label: "Home" },
   { href: "./#products", label: "Products" },
   { href: "./#applications", label: "Applications" },
-  { href: "./#quality", label: "Research" },
+  { href: "./#quality", label: "Quality" },
+  { href: "./#research", label: "Research" },
   { href: "./#about", label: "About Us" },
 ];
 
@@ -220,3 +221,10 @@ export const applications = [
   { icon: "🔬", title: "Research Reference: Institute of Marine Research", text: "Havforskningsinstituttet (HI), Norway – marine and aquaculture research. Visit hi.no →", img: "hi-ref.webp", alt: "Feed technology lab with an extruder (photo: Nofima)", credit: "Photo: Nofima", href: "https://www.hi.no/en" },
 ];
 
+export const quality = [
+  ["Responsibly sourced", "Nordic catch from Norway and Denmark"],
+  ["Cold-chain handling", "to protect freshness and nutrients"],
+  ["Batch-tested", "for protein, moisture and purity"],
+  ["Sealed 50 kg drums", "for safe storage and transport"],
+  ["Documentation", "available on request with every order"],
+];
