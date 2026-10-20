@@ -184,3 +184,4 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .ref-btn { margin-top: 18px; }
 .about-media { display: grid; gap: 22px; justify-items: center; }
 .about-ref { width: 100%; max-width: 480px; }
+.network .logos { width: 100%; max-width: 960px; height: auto; margin: 28px auto 0; background: #fff; border-radius: 16px; padding: 12px; box-shadow: 0 6px 22px rgba(62, 104, 26, .07); }
