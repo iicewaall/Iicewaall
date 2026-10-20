@@ -181,3 +181,8 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .lang-btn { font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .55); background: transparent; color: #fff; }
 .lang-btn:hover { background: rgba(255, 255, 255, .15); }
 .lang-btn.on { background: #fff; color: var(--green-dk); border-color: #fff; }
+/* Markets list in the footer */
+.markets { padding-top: 18px; margin-top: 16px; border-top: 1px solid rgba(255, 255, 255, .25); }
+.markets h3 { color: #fff; font-size: 17px; margin-bottom: 12px; }
+.markets ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px 18px; font-size: 14px; color: #eef7e2; }
+.markets b { color: #fff; font-weight: 700; }

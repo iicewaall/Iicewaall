@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, signal } from '@angular/core';
-import { applications, highlights, products, projects, quality } from './data';
+import { applications, highlights, markets, products, projects, quality } from './data';
 import { DEFAULT_LANG, Lang, LANGS, T } from './i18n';
 
 @Component({
@@ -12,6 +12,7 @@ export class App implements OnInit, OnDestroy {
   protected readonly applications = applications;
   protected readonly quality = quality;
   protected readonly projects = projects;
+  protected readonly markets = markets;
 
   // Language: Danish by default; the visitor's choice is remembered in this browser
   protected readonly langs = LANGS;

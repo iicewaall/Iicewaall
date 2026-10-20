@@ -188,6 +188,12 @@
     <p>{{ t('IICE WAALL · Premium Marine Proteins from Pure Nordic Waters') }}</p>
     <a href="#top">{{ t('Back to top ↑') }}</a>
   </div>
+  <div class="wrap markets">
+    <h3>{{ t('Markets We Serve') }}</h3>
+    <ul>
+      @for (m of markets; track m[0]) { <li><b>{{ t(m[0]) }}</b> – {{ t(m[1]) }}</li> }
+    </ul>
+  </div>
   <div class="wrap lang-bar" role="group" [attr.aria-label]="t('Language')">
     @for (l of langs; track l.code) {
       <button type="button" class="lang-btn" [class.on]="lang() === l.code" [attr.aria-pressed]="lang() === l.code" [attr.lang]="l.html" (click)="setLang(l.code)"><span aria-hidden="true">{{ l.flag }}</span> {{ l.label }}</button>
