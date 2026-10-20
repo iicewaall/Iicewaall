@@ -177,3 +177,4 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .app-link img { width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; margin-bottom: 14px; }
 .app-link h3, .app-link p { padding: 0 20px; }
 .app-link p { color: var(--green-dk); }
+.app-link .credit { display: block; padding: 6px 20px 0; font-size: 11px; color: var(--muted); }
