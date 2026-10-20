@@ -15,7 +15,7 @@
   <section class="hero" aria-label="Premium marine proteins from pure Nordic waters">
     <div class="slides" (mouseenter)="paused = true" (mouseleave)="paused = false" (focusin)="paused = true" (focusout)="paused = false">
       @for (sl of slides; track sl.src; let i = $index) {
-        <img class="hero-img slide" [class.on]="i === slide()" [src]="'assets/' + sl.src + '.webp'" [attr.srcset]="'assets/' + sl.src + '-900.webp 900w, assets/' + sl.src + '.webp 1672w'" sizes="100vw" width="1672" height="791" [alt]="sl.alt" [attr.aria-hidden]="i !== slide()" [attr.fetchpriority]="i === 0 ? 'high' : null" [attr.loading]="i === 0 ? null : 'lazy'" />
+        <img class="hero-img slide" [class.on]="i === slide()" [src]="'assets/' + sl.src + '.webp?v=2'" [attr.srcset]="'assets/' + sl.src + '-900.webp?v=2 900w, assets/' + sl.src + '.webp?v=2 1672w'" sizes="100vw" width="1672" height="791" [alt]="sl.alt" [attr.aria-hidden]="i !== slide()" [attr.fetchpriority]="i === 0 ? 'high' : null" [attr.loading]="i === 0 ? null : 'lazy'" />
       }
       <button class="sl-arrow prev" type="button" aria-label="Previous slide" (click)="go(slide() - 1)">‹</button>
       <button class="sl-arrow next" type="button" aria-label="Next slide" (click)="go(slide() + 1)">›</button>
