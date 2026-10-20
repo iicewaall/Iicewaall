@@ -90,13 +90,6 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .contact h2, .contact .eyebrow { color: #fff; }
 .contact .eyebrow { color: #f0f8e6; }
 .contact .lead { color: #f4faec; }
-.quote { margin-top: 28px; max-width: 760px; display: grid; gap: 14px; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .2); border-radius: 18px; padding: 24px; }
-.quote .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.quote label { display: grid; gap: 6px; font-size: 14px; font-weight: 500; color: #f4faec; }
-.quote input, .quote select, .quote textarea { font: inherit; color: var(--text); background: #fff; border: 1px solid transparent; border-radius: 10px; padding: 11px 12px; width: 100%; }
-.quote input:focus, .quote select:focus, .quote textarea:focus { outline: 3px solid #2f5a12; }
-.quote .btn-primary { justify-self: start; background: #fff; color: var(--navy); }
-.note { font-size: 14px; color: #fff; min-height: 1.2em; }
 
 /* Footer */
 .footer { background: #4d7a22; color: #eef7e2; padding: 26px 0; font-size: 14px; }
@@ -123,7 +116,6 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
   .products { grid-template-columns: 1fr; gap: 14px; }
   .product > div { padding: 12px; }
   .apps { grid-template-columns: 1fr; }
-  .quote .row { grid-template-columns: 1fr; }
   .section { padding: 52px 0; }
   .logo img { height: 50px; }
 }
@@ -185,3 +177,11 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .about-media { display: grid; gap: 22px; justify-items: center; }
 .about-ref { width: 100%; max-width: 480px; }
 .network .logos { width: 100%; max-width: 960px; height: auto; margin: 28px auto 0; background: #fff; border-radius: 16px; padding: 12px; box-shadow: 0 6px 22px rgba(62, 104, 26, .07); }
+.proj-title { color: #fff; margin: 30px 0 14px; font-size: 20px; }
+.projects { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 32px; }
+.projects li { display: grid; gap: 3px; padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, .28); }
+.projects b { color: #fff; font-family: var(--display); font-size: 17px; }
+.projects span { color: #f4faec; font-size: 15px; }
+.projects small { color: #e2f0d0; font-size: 13px; }
+.proj-btn { margin-top: 26px; background: #fff; color: var(--navy); }
+@media (max-width: 700px) { .projects { grid-template-columns: 1fr; } }

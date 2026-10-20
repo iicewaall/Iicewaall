@@ -27,7 +27,6 @@
     </div>
     <div class="hero-cta wrap">
       <a href="#products" class="btn btn-primary">View Products <span aria-hidden="true">→</span></a>
-      <a href="#contact" class="btn btn-ghost">Request a Quote</a>
     </div>
   </section>
 
@@ -143,26 +142,16 @@
 
   <section class="section contact" id="contact">
     <div class="wrap">
-      <p class="eyebrow">Contact</p>
-      <h2>Get a Quote</h2>
-      <p class="lead">Tell us which product and how much you need. We will reply with price, specs and delivery details.</p>
-      <form class="quote" (submit)="submit($event)">
-        <div class="row">
-          <label>Name<input name="name" required autocomplete="name" /></label>
-          <label>Company<input name="company" autocomplete="organization" /></label>
-        </div>
-        <div class="row">
-          <label>Phone / WhatsApp<input name="phone" type="tel" required autocomplete="tel" /></label>
-          <label>Product
-            <select name="product">
-              @for (p of products; track p.name) { <option>{{ p.name }}</option> }
-            </select>
-          </label>
-        </div>
-        <label>Quantity &amp; message<textarea name="message" rows="3" placeholder="Minimum order 6 tons (120 drums). e.g. 6 tons, delivery to…"></textarea></label>
-        <button type="submit" class="btn btn-primary">Send Enquiry <span aria-hidden="true">→</span></button>
-        <p class="note" role="status">{{ note() }}</p>
-      </form>
+      <p class="eyebrow">Research Partner</p>
+      <h2>Sustainable food for all</h2>
+      <p class="lead">The Norwegian food research institute Nofima provides research-based knowledge and innovations for actors in all parts of the food systems.</p>
+      <h3 class="proj-title">Horizon Europe projects led or joined by Nofima</h3>
+      <ul class="projects">
+        @for (pr of projects; track pr[0]) {
+          <li><b>{{ pr[0] }}</b><span>{{ pr[1] }}</span><small>{{ pr[2] }}</small></li>
+        }
+      </ul>
+      <a class="btn proj-btn" href="https://nofima.com/" target="_blank" rel="noopener">Visit nofima.com <span aria-hidden="true">→</span></a>
     </div>
   </section>
 </main>
