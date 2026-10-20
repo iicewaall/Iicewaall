@@ -146,7 +146,6 @@
           @for (sp of page.specs; track sp[0]) { <dt>{{ sp[0] }}</dt><dd>{{ sp[1] }}</dd> }
         </dl>
         <p class="moq"><b>Minimum order: 6 tons</b> <span>(120 drums of 50 kg)</span></p>
-        <div class="pp-cta"><a href="./#contact" class="btn btn-primary">Request a Quote <span aria-hidden="true">→</span></a></div>
       </div>
     </div>
     @for (d of details(page); track d.title) {
@@ -162,7 +161,7 @@
       <div class="others">
         @for (o of products; track o.slug) {
           @if (o.slug !== page.slug) {
-            <a [href]="'product/' + o.slug + '/'" class="card other"><img [src]="'assets/front-' + o.slug + '.webp'" [alt]="o.name" loading="lazy" width="560" height="808" /><span>{{ o.name }}</span></a>
+            <a [href]="'product/' + o.slug + '/'" class="other"><img [src]="'assets/front-' + o.slug + '.webp'" [alt]="o.name" loading="lazy" width="560" height="808" /><span>{{ o.name }}</span></a>
           }
         }
       </div>
@@ -174,7 +173,7 @@
 <footer class="footer">
   <div class="wrap footer-inner">
     <img src="assets/logo-sm.png" alt="IICE WAALL" width="110" height="74" loading="lazy" />
-    <p>© {{ year }} IICE WAALL · Premium Marine Proteins from Pure Nordic Waters</p>
+    <p>IICE WAALL · Premium Marine Proteins from Pure Nordic Waters</p>
     <a href="#top">Back to top ↑</a>
   </div>
 </footer>

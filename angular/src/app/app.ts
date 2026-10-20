@@ -11,7 +11,6 @@ export class App implements OnInit, OnDestroy {
   protected readonly products = products;
   protected readonly applications = applications;
   protected readonly quality = quality;
-  protected readonly year = new Date().getFullYear();
 
   protected readonly menuOpen = signal(false);
   protected readonly active = signal(nav[0].href);
