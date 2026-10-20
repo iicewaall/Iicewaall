@@ -69,7 +69,36 @@ export const products = [
   { name: "Anchovy / Anchovet Protein", slug: "anchovy", flag: "🇳🇴", country: "Norway", text: "High-quality anchovy protein meal for aquafeed and animal nutrition formulations.",
     specs: [["Source", "Anchovy / Anchovet (marine)"], ["Protein", "96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "3%"], ["Ash (max)", "15%"], ["Form", "Fish protein meal (fine powder)"], ["Colour", "Light brown"], ["Application", "Aquaculture feed, animal feed"]] },
   { name: "Marine Collagen Peptides", slug: "collagen", flag: "🇳🇴", country: "Norway", text: "Water-soluble cold-water collagen peptides for food, nutraceutical and cosmetic use.",
-    specs: [["Source", "Marine (cold water)"], ["Collagen protein", "≥ 96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "1%"], ["Ash (max)", "3%"], ["Form", "Collagen peptides (fine powder)"], ["Colour", "Off white"], ["Solubility", "High (water soluble)"], ["Application", "Food, nutraceutical, cosmetic, aquaculture and animal feed"]] },
+    specs: [["Source", "Marine (cold water)"], ["Collagen protein", "≥ 96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "1%"], ["Ash (max)", "3%"], ["Form", "Collagen peptides (fine powder)"], ["Colour", "Off white"], ["Solubility", "High (water soluble)"], ["Application", "Food, nutraceutical, cosmetic, aquaculture and animal feed"]],
+    details: [
+      { title: "Key Amino Acids (Collagen Profile)", items: [
+        ["Glycine", "Most abundant amino acid in collagen.", "33%"],
+        ["Proline", "Supports joint health and skin elasticity.", "12%"],
+        ["Alanine", "Helps the body process glucose and eliminate toxins.", "11%"],
+        ["Hydroxyproline", "Collagen-specific amino acid that stabilises the collagen structure.", "10%"],
+      ] },
+      { title: "Essential Amino Acids", items: [
+        ["Leucine", "Crucial for muscle protein synthesis and repair."],
+        ["Lysine", "Important for bone health, tissue repair and hormone production."],
+        ["Valine", "Promotes muscle growth and tissue regeneration."],
+        ["Isoleucine", "Assists with hemoglobin synthesis and energy regulation."],
+        ["Phenylalanine", "Essential for brain health and neurotransmitter function."],
+        ["Threonine", "Supports structural proteins like collagen and elastin."],
+        ["Methionine", "Necessary for metabolism, tissue growth and detoxification."],
+        ["Histidine", "Important for maintaining the myelin sheath (nerve cell protection)."],
+        ["Tryptophan", "Precursor to serotonin, which regulates mood and sleep."],
+      ] },
+      { title: "Non-Essential Amino Acids", items: [
+        ["Glutamic Acid", "Supports brain function and metabolism."],
+        ["Aspartic Acid", "Plays a key role in energy production and hormone regulation."],
+        ["Arginine", "Boosts immune function and improves blood circulation."],
+        ["Alanine", "Helps the body process glucose and eliminate toxins."],
+        ["Glycine", "Aids in cellular growth, DNA construction and muscle health."],
+        ["Proline", "Supports joint health and skin elasticity."],
+        ["Serine", "Crucial for proper brain function and the central nervous system."],
+        ["Tyrosine", "Helps improve alertness, focus and manage stress."],
+      ] },
+    ] },
 ];
 
 export const applications = [
