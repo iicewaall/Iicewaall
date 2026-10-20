@@ -86,7 +86,7 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .contact .lead { color: #f4faec; }
 
 /* Footer */
-.footer { background: #4d7a22; color: #eef7e2; padding: 26px 0; font-size: 14px; }
+.footer { background: var(--green); color: #eef7e2; padding: 26px 0; font-size: 14px; }
 .footer-inner { display: flex; align-items: center; gap: 18px; justify-content: space-between; flex-wrap: wrap; }
 .footer img { height: 48px; width: auto; filter: drop-shadow(0 0 8px rgba(255, 255, 255, .25)); }
 
