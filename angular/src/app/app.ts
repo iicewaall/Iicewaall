@@ -18,8 +18,6 @@ export class App implements OnInit, OnDestroy {
 
   // Hero slider: advances every 5 s, pauses on hover/focus and for reduced motion
   protected readonly slides = [
-    { src: 'hero', alt: 'IICE WAALL premium marine proteins from pure Nordic waters – five protein drums on ice in front of Nordic fjords' },
-    { src: 'slide-2', alt: 'New: IICE WAALL Antarctic Krill Protein, 96% protein (lab tested), rich in amino acids and omega-3, 50 kg drums, made in Norway' },
     { src: 'slide-4', alt: 'Research and quality reference: aquaculture feed trials at Nofima, Norway (photo: Nofima)' },
     { src: 'slide-5', alt: 'Research and quality reference: feed processing technology at Nofima, Norway (photo: Nofima)' },
     { src: 'slide-6', alt: 'Research and quality reference: fish growth and feed performance tanks at Nofima, Norway (photo: Nofima)' },
