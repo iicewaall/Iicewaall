@@ -10,6 +10,7 @@
   </div>
 </header>
 
+@if (!page) {
 <main>
   <section class="hero" aria-label="Premium marine proteins from pure Nordic waters">
     <div class="slides" (mouseenter)="paused = true" (mouseleave)="paused = false" (focusin)="paused = true" (focusout)="paused = false">
@@ -46,9 +47,9 @@
       <div class="grid products">
         @for (p of products; track p.slug) {
           <article class="card product">
-            <img [src]="'assets/front-' + p.slug + '.webp'" [alt]="'IICE WAALL ' + p.name + ', 50 kg drum, made in ' + p.country" loading="lazy" width="560" height="808" />
+            <a [href]="'product/' + p.slug + '/'" class="card-img"><img [src]="'assets/front-' + p.slug + '.webp'" [alt]="'IICE WAALL ' + p.name + ', 50 kg drum, made in ' + p.country" loading="lazy" width="560" height="808" /></a>
             <div>
-              <h3>{{ p.name }}</h3>
+              <h3><a [href]="'product/' + p.slug + '/'">{{ p.name }}</a></h3>
               <p class="origin">{{ p.flag }} Made in {{ p.country }} · 50 kg</p>
               <p>{{ p.text }}</p>
               <details class="specs">
@@ -56,7 +57,7 @@
                 <dl>
                   @for (sp of p.specs; track sp[0]) { <dt>{{ sp[0] }}</dt><dd>{{ sp[1] }}</dd> }
                 </dl>
-                <button type="button" class="label-btn" (click)="open.set(p)">View full label{{ details(p).length ? ' & nutrition' : '' }}</button>
+                <a class="label-btn" [href]="'product/' + p.slug + '/'">View full label{{ details(p).length ? ' & nutrition' : '' }} →</a>
               </details>
             </div>
           </article>
@@ -130,32 +131,44 @@
   </section>
 </main>
 
-@if (open(); as p) {
-  <div class="pop" role="dialog" aria-modal="true" [attr.aria-label]="p.name" (click)="open.set(null)">
-    <div class="pop-box" (click)="$event.stopPropagation()">
-      <button type="button" class="pop-close" aria-label="Close" (click)="open.set(null)">×</button>
-      <div class="pop-grid">
-        <img [src]="'assets/back-' + p.slug + '.webp'" [alt]="'Back label of IICE WAALL ' + p.name" />
-        <div>
-          <p class="eyebrow">{{ p.flag }} Made in {{ p.country }} · 50 kg</p>
-          <h2>{{ p.name }}</h2>
-          <p class="pop-text">{{ p.text }}</p>
-          <h3>Specifications</h3>
-          <dl class="pop-specs">
-            @for (sp of p.specs; track sp[0]) { <dt>{{ sp[0] }}</dt><dd>{{ sp[1] }}</dd> }
-          </dl>
-        </div>
+} @else {
+<main class="pp" id="top">
+  <div class="wrap">
+    <a class="back" href="./#products">← All products</a>
+    <div class="pop-grid">
+      <img [src]="'assets/back-' + page.slug + '.webp'" [alt]="'Back label of IICE WAALL ' + page.name" width="900" height="1299" />
+      <div>
+        <p class="eyebrow">{{ page.flag }} Made in {{ page.country }} · 50 kg</p>
+        <h1>{{ page.name }}</h1>
+        <p class="pop-text">{{ page.text }}</p>
+        <h3>Specifications</h3>
+        <dl class="pop-specs">
+          @for (sp of page.specs; track sp[0]) { <dt>{{ sp[0] }}</dt><dd>{{ sp[1] }}</dd> }
+        </dl>
+        <p class="moq"><b>Minimum order: 6 tons</b> <span>(120 drums of 50 kg)</span></p>
+        <div class="pp-cta"><a href="./#contact" class="btn btn-primary">Request a Quote <span aria-hidden="true">→</span></a></div>
       </div>
-      @for (d of details(p); track d.title) {
-        <section class="pop-sec">
-          <h3>{{ d.title }}</h3>
-          <ul class="nutri">
-            @for (it of d.items; track it[0]) { <li><b>{{ it[0] }}</b>@if (it[2]) {<span class="pct">{{ it[2] }}</span>}<span>{{ it[1] }}</span></li> }
-          </ul>
-        </section>
-      }
     </div>
+    @for (d of details(page); track d.title) {
+      <section class="pop-sec">
+        <h2>{{ d.title }}</h2>
+        <ul class="nutri">
+          @for (it of d.items; track it[0]) { <li><b>{{ it[0] }}</b>@if (it[2]) {<span class="pct">{{ it[2] }}</span>}<span>{{ it[1] }}</span></li> }
+        </ul>
+      </section>
+    }
+    <section class="pop-sec">
+      <h2>Other Products</h2>
+      <div class="others">
+        @for (o of products; track o.slug) {
+          @if (o.slug !== page.slug) {
+            <a [href]="'product/' + o.slug + '/'" class="card other"><img [src]="'assets/front-' + o.slug + '.webp'" [alt]="o.name" loading="lazy" width="560" height="808" /><span>{{ o.name }}</span></a>
+          }
+        }
+      </div>
+    </section>
   </div>
+</main>
 }
 
 <footer class="footer">

@@ -5,11 +5,11 @@
 export const WHATSAPP = "";
 
 export const nav = [
-  { href: "#top", label: "Home" },
-  { href: "#products", label: "Products" },
-  { href: "#applications", label: "Applications" },
-  { href: "#quality", label: "Quality" },
-  { href: "#about", label: "About Us" },
+  { href: "./", label: "Home" },
+  { href: "./#products", label: "Products" },
+  { href: "./#applications", label: "Applications" },
+  { href: "./#quality", label: "Quality" },
+  { href: "./#about", label: "About Us" },
 ];
 
 export const highlights = [

@@ -33,6 +33,7 @@ jobs:
         run: |
           npm ci
           npx ng build --base-href "${{ steps.pages.outputs.base_path }}/"
+          node scripts/product-pages.mjs
           touch dist/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3

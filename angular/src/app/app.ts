@@ -14,7 +14,7 @@ export class App implements OnInit, OnDestroy {
   protected readonly year = new Date().getFullYear();
 
   protected readonly menuOpen = signal(false);
-  protected readonly active = signal('#top');
+  protected readonly active = signal(nav[0].href);
   protected readonly note = signal('');
 
   // Hero slider: advances every 5 s, pauses on hover/focus and for reduced motion
@@ -29,14 +29,18 @@ export class App implements OnInit, OnDestroy {
   ];
   protected readonly slide = signal(0);
 
-  // Product popup opened by "View full label"
-  protected readonly open = signal<(typeof products)[number] | null>(null);
+  // Product page: /product/<slug>/ shows one product instead of the home page.
+  // Each such folder holds a copy of index.html (see scripts/product-pages.mjs).
+  protected readonly page = (() => {
+    const m = location.pathname.match(/\/product\/([a-z-]+)\/?$/);
+    return m ? products.find((p) => p.slug === m[1]) ?? null : null;
+  })();
   protected details(p: (typeof products)[number]): { title: string; items: string[][] }[] { return ('details' in p && p.details) || []; }
-  @HostListener('document:keydown.escape') closePopup() { this.open.set(null); }
   protected paused = false;
   private timer?: ReturnType<typeof setInterval>;
 
   ngOnInit() {
+    if (this.page) { document.title = `${this.page.name} – IICE WAALL`; window.scrollTo(0, 0); return; }
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       this.timer = setInterval(() => { if (!this.paused && !document.hidden) this.go(this.slide() + 1); }, 5000);
     }
@@ -49,9 +53,11 @@ export class App implements OnInit, OnDestroy {
   // Highlight the nav link of the section on screen
   @HostListener('window:scroll')
   onScroll() {
-    let cur = '#top';
+    if (this.page) return;
+    let cur = nav[0].href;
     for (const { href } of nav) {
-      const el = document.querySelector(href);
+      const id = href.split('#')[1];
+      const el = id && document.getElementById(id);
       if (el && el.getBoundingClientRect().top <= 120) cur = href;
     }
     this.active.set(cur);
