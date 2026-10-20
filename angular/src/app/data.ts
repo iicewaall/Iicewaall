@@ -217,7 +217,7 @@ export const applications = [
   { icon: "🔬", title: "Research Reference: Nofima", text: "Norwegian Institute of Food, Fisheries and Aquaculture Research – marine ingredients and feed research. Visit nofima.com →", img: "nofima-lab.webp", alt: "Nofima researchers in a feed technology lab (photo: Nofima)", href: "https://nofima.com/" },
   { icon: "🔬", title: "Research Reference: DTU Aqua", text: "National Institute of Aquatic Resources, Technical University of Denmark – fisheries and aquaculture research. Visit aqua.dtu.dk →", img: "dtu-aqua.webp", alt: "Fish feed trial tanks in an aquaculture research lab", href: "https://www.aqua.dtu.dk/english" },
   { icon: "🐟", title: "Industry Reference: EWOS Salmon Feed", text: "EWOS – salmon feeds and services for aquaculture. Visit ewos.com →", img: "ewos-ref.webp?v=2", alt: "Two scientists in white lab coats in a laboratory corridor", href: "https://www.ewos.com/uk/products-and-services/salmon/" },
-  { icon: "💊", title: "Nutraceuticals", text: "Collagen peptides for supplements, beauty and functional foods." },
+  { icon: "🔬", title: "Research Reference: Institute of Marine Research", text: "Havforskningsinstituttet (HI), Norway – marine and aquaculture research. Visit hi.no →", img: "hi-ref.webp", alt: "Feed technology lab with an extruder (photo: Nofima)", credit: "Photo: Nofima", href: "https://www.hi.no/en" },
 ];
 
 export const quality = [
