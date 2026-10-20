@@ -88,6 +88,21 @@
 
   <section class="section" id="quality">
     <div class="wrap split">
+      <div>
+        <p class="eyebrow">Quality</p>
+        <h2>Pure Nordic Quality, Batch After Batch</h2>
+        <p class="lead">From cold Nordic waters to a sealed drum, every step is controlled to keep our proteins fresh, clean and consistent.</p>
+      </div>
+      <ul class="checks">
+        @for (q of quality; track q[0]) {
+          <li><b>{{ q[0] }}</b> {{ q[1] }}</li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="research">
+    <div class="wrap split">
       <a class="ref-img" href="https://www.stir.ac.uk/about/faculties/natural-sciences/aquaculture/national-aquaculture-technology-and-innovation-hub/" target="_blank" rel="noopener">
         <img src="assets/stirling-natih.webp" alt="Researchers beside aquaculture trial tanks in a research lab" loading="lazy" width="900" height="583" />
       </a>
