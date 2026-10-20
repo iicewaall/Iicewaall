@@ -12,13 +12,10 @@
 @if (!page) {
 <main>
   <section class="hero" [attr.aria-label]="t('Premium marine proteins from pure Nordic waters')">
-    <div class="slides" [class.back]="dir() === 'prev'" [class.paused]="paused" (mouseenter)="paused = true" (mouseleave)="paused = false" (focusin)="paused = true" (focusout)="paused = false">
+    <div class="slides" (mouseenter)="paused = true" (mouseleave)="paused = false" (focusin)="paused = true" (focusout)="paused = false">
       @for (sl of slides; track sl.src; let i = $index) {
-        <img class="hero-img slide" [class.on]="i === slide()" [class.prev]="i === prevSlide()" [src]="'assets/' + sl.src + '.webp?v=2'" [attr.srcset]="'assets/' + sl.src + '-900.webp?v=2 900w, assets/' + sl.src + '.webp?v=2 1672w'" sizes="100vw" width="1672" height="791" [alt]="sl.alt" [attr.aria-hidden]="i !== slide()" [attr.fetchpriority]="i === 0 ? 'high' : null" [attr.loading]="i === 0 ? null : 'lazy'" />
+        <img class="hero-img slide" [class.on]="i === slide()" [src]="'assets/' + sl.src + '.webp?v=2'" [attr.srcset]="'assets/' + sl.src + '-900.webp?v=2 900w, assets/' + sl.src + '.webp?v=2 1672w'" sizes="100vw" width="1672" height="791" [alt]="sl.alt" [attr.aria-hidden]="i !== slide()" [attr.fetchpriority]="i === 0 ? 'high' : null" [attr.loading]="i === 0 ? null : 'lazy'" />
       }
-      @for (k of [tick()]; track k) { @if (k) { <span class="sl-scan" aria-hidden="true"></span> } }
-      <span class="sl-hud" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-      <span class="sl-count" aria-hidden="true">{{ (slide() + 1).toString().padStart(2, '0') }} / {{ slides.length.toString().padStart(2, '0') }}</span>
       <button class="sl-arrow prev" type="button" [attr.aria-label]="t('Previous slide')" (click)="go(slide() - 1)">‹</button>
       <button class="sl-arrow next" type="button" [attr.aria-label]="t('Next slide')" (click)="go(slide() + 1)">›</button>
       <div class="sl-dots">
