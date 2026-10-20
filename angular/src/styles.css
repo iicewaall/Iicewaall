@@ -109,7 +109,6 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 }
 @media (max-width: 860px) {
   .menu-btn { display: flex; }
-  .hdr-quote { display: none; }
   .nav { position: absolute; top: 76px; left: 0; right: 0; flex-direction: column; gap: 0; background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 12px 24px rgba(62, 104, 26, .1); max-height: 0; overflow: hidden; transition: max-height .25s; }
   .nav.open { max-height: 400px; }
   .nav a { padding: 14px 16px; border-top: 1px solid var(--line); }

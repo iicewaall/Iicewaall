@@ -6,7 +6,6 @@
         <a [href]="n.href" [class.active]="active() === n.href" (click)="menuOpen.set(false)">{{ n.label }}</a>
       }
     </nav>
-    <a href="#contact" class="btn btn-primary hdr-quote">Get Quote <span aria-hidden="true">→</span></a>
     <button class="menu-btn" aria-label="Open menu" [attr.aria-expanded]="menuOpen()" aria-controls="nav" (click)="menuOpen.set(!menuOpen())"><span></span><span></span><span></span></button>
   </div>
 </header>
