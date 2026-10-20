@@ -176,3 +176,8 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .eu-badge { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #003399; color: #fff; font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: .2px; }
 .eu-flag { font-size: 20px; line-height: 1; }
 @media (max-width: 560px) { .eu-badge { font-size: 12px; padding: 6px 10px; gap: 6px; } .eu-flag { font-size: 16px; } }
+/* Language switcher (bottom of every page) */
+.lang-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding-top: 14px; margin-top: 14px; border-top: 1px solid rgba(255, 255, 255, .25); }
+.lang-btn { font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .55); background: transparent; color: #fff; }
+.lang-btn:hover { background: rgba(255, 255, 255, .15); }
+.lang-btn.on { background: #fff; color: var(--green-dk); border-color: #fff; }
