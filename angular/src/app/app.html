@@ -76,7 +76,6 @@
             <a class="card app app-link" [href]="x.href" target="_blank" rel="noopener">
               <img [src]="'assets/' + x.img" [alt]="x.alt" loading="lazy" width="640" height="320" />
               <h3>{{ x.title }}</h3><p>{{ x.text }}</p>
-              @if (x.credit) { <small class="credit">{{ x.credit }}</small> }
             </a>
           } @else {
             <div class="card app"><span class="ico" aria-hidden="true">{{ x.icon }}</span><h3>{{ x.title }}</h3><p>{{ x.text }}</p></div>
