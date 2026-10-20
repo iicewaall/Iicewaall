@@ -68,29 +68,14 @@ export class App implements OnInit, OnDestroy {
   ngOnInit() {
     this.applyLang();
     if (this.page) { window.scrollTo(0, 0); return; }
-    this.restart();
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.timer = setInterval(() => { if (!this.paused && !document.hidden) this.go(this.slide() + 1); }, 5000);
+    }
   }
 
   ngOnDestroy() { clearInterval(this.timer); }
 
-  // Futuristic transition: the new slide wipes in behind a glowing scan line, in the direction of travel
-  protected readonly prevSlide = signal(-1);
-  protected readonly dir = signal<'next' | 'prev'>('next');
-  protected readonly tick = signal(0);
-  go(i: number) {
-    const n = this.slides.length, cur = this.slide(), to = (i + n) % n;
-    if (to === cur) return;
-    this.dir.set(i < cur ? 'prev' : 'next');
-    this.prevSlide.set(cur);
-    this.slide.set(to);
-    this.tick.update((t) => t + 1);
-    this.restart();
-  }
-  private restart() {
-    clearInterval(this.timer);
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    this.timer = setInterval(() => { if (!this.paused && !document.hidden) this.go(this.slide() + 1); }, 5000);
-  }
+  go(i: number) { this.slide.set((i + this.slides.length) % this.slides.length); }
 
 
 }
