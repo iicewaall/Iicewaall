@@ -22,6 +22,10 @@ export class App implements OnInit, OnDestroy {
     { src: 'hero', alt: 'IICE WAALL premium marine proteins from pure Nordic waters – five protein drums on ice in front of Nordic fjords' },
     { src: 'slide-2', alt: 'New: IICE WAALL Antarctic Krill Protein, 96% protein (lab tested), rich in amino acids and omega-3, 50 kg drums, made in Norway' },
     { src: 'slide-3', alt: 'Six premium marine proteins: Krill, Salmon, Tuna, Herring, Anchovy and Marine Collagen Peptides' },
+    { src: 'slide-4', alt: 'Research and quality reference: aquaculture feed trials at Nofima, Norway (photo: Nofima)' },
+    { src: 'slide-5', alt: 'Research and quality reference: feed processing technology at Nofima, Norway (photo: Nofima)' },
+    { src: 'slide-6', alt: 'Research and quality reference: fish growth and feed performance tanks at Nofima, Norway (photo: Nofima)' },
+    { src: 'slide-7', alt: 'Research and quality reference: Nofima marine ingredients expertise, Norway (photo: Nofima)' },
   ];
   protected readonly slide = signal(0);
   protected paused = false;
