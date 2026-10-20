@@ -173,3 +173,7 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 @media (max-width: 900px) { .pop-grid { grid-template-columns: 1fr; } .nutri { grid-template-columns: repeat(2, 1fr); } .others { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 560px) { .nutri { grid-template-columns: 1fr; } .others { grid-template-columns: repeat(2, 1fr); } }
 .nutri li span:empty { display: none; }
+.app-link { display: block; padding: 0 0 20px; overflow: hidden; }
+.app-link img { width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; margin-bottom: 14px; }
+.app-link h3, .app-link p { padding: 0 20px; }
+.app-link p { color: var(--green-dk); }
