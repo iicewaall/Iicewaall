@@ -178,16 +178,6 @@
         </ul>
       </section>
     }
-    <section class="pop-sec">
-      <h2>Other Products</h2>
-      <div class="others">
-        @for (o of products; track o.slug) {
-          @if (o.slug !== page.slug) {
-            <a [href]="'product/' + o.slug + '/'" class="other"><img [src]="'assets/front-' + o.slug + '.webp'" [alt]="o.name" loading="lazy" width="560" height="808" /><span>{{ o.name }}</span></a>
-          }
-        }
-      </div>
-    </section>
   </div>
 </main>
 }
