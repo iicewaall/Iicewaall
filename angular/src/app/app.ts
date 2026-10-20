@@ -28,6 +28,7 @@ export class App implements OnInit, OnDestroy {
     { src: 'slide-11', alt: 'Single-storey commercial building entrance' },
     { src: 'slide-12', alt: 'Glass-roofed atrium of a modern office building' },
     { src: 'slide-13', alt: 'Modern office building in snow' },
+    { src: 'slide-14', alt: 'Aerial view of a glass-domed building with green roofs' },
   ];
   protected readonly slide = signal(0);
 
