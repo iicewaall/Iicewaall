@@ -178,3 +178,6 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .price span { font-family: "DM Sans", sans-serif; font-weight: 500; font-size: 13px; color: var(--muted); }
 .price.big { font-size: 30px; margin: 0 0 12px; }
 .price.big span { font-size: 15px; }
+.eu-badge { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #003399; color: #fff; font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: .2px; }
+.eu-flag { font-size: 20px; line-height: 1; }
+@media (max-width: 560px) { .eu-badge { font-size: 12px; padding: 6px 10px; gap: 6px; } .eu-flag { font-size: 16px; } }
