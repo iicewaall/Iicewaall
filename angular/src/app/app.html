@@ -56,7 +56,7 @@
                 <dl>
                   @for (sp of p.specs; track sp[0]) { <dt>{{ sp[0] }}</dt><dd>{{ sp[1] }}</dd> }
                 </dl>
-                <a [href]="'assets/back-' + p.slug + '.webp'" target="_blank" rel="noopener">View full label</a>
+                <button type="button" class="label-btn" (click)="open.set(p)">View full label{{ details(p).length ? ' & nutrition' : '' }}</button>
               </details>
             </div>
           </article>
@@ -129,6 +129,34 @@
     </div>
   </section>
 </main>
+
+@if (open(); as p) {
+  <div class="pop" role="dialog" aria-modal="true" [attr.aria-label]="p.name" (click)="open.set(null)">
+    <div class="pop-box" (click)="$event.stopPropagation()">
+      <button type="button" class="pop-close" aria-label="Close" (click)="open.set(null)">×</button>
+      <div class="pop-grid">
+        <img [src]="'assets/back-' + p.slug + '.webp'" [alt]="'Back label of IICE WAALL ' + p.name" />
+        <div>
+          <p class="eyebrow">{{ p.flag }} Made in {{ p.country }} · 50 kg</p>
+          <h2>{{ p.name }}</h2>
+          <p class="pop-text">{{ p.text }}</p>
+          <h3>Specifications</h3>
+          <dl class="pop-specs">
+            @for (sp of p.specs; track sp[0]) { <dt>{{ sp[0] }}</dt><dd>{{ sp[1] }}</dd> }
+          </dl>
+        </div>
+      </div>
+      @for (d of details(p); track d.title) {
+        <section class="pop-sec">
+          <h3>{{ d.title }}</h3>
+          <ul class="nutri">
+            @for (it of d.items; track it[0]) { <li><b>{{ it[0] }}</b>@if (it[2]) {<span class="pct">{{ it[2] }}</span>}<span>{{ it[1] }}</span></li> }
+          </ul>
+        </section>
+      }
+    </div>
+  </div>
+}
 
 <footer class="footer">
   <div class="wrap footer-inner">
