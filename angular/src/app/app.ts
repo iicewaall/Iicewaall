@@ -22,6 +22,12 @@ export class App implements OnInit, OnDestroy {
     { src: 'slide-5', alt: 'Research and quality reference: feed processing technology at Nofima, Norway (photo: Nofima)' },
     { src: 'slide-6', alt: 'Research and quality reference: fish growth and feed performance tanks at Nofima, Norway (photo: Nofima)' },
     { src: 'slide-7', alt: 'Research and quality reference: Nofima marine ingredients expertise, Norway (photo: Nofima)' },
+    { src: 'slide-8', alt: 'Modern industrial and office building' },
+    { src: 'slide-9', alt: 'Scientists working in a modern laboratory' },
+    { src: 'slide-10', alt: 'Industrial building with trees' },
+    { src: 'slide-11', alt: 'Single-storey commercial building entrance' },
+    { src: 'slide-12', alt: 'Glass-roofed atrium of a modern office building' },
+    { src: 'slide-13', alt: 'Modern office building in snow' },
   ];
   protected readonly slide = signal(0);
 
