@@ -18,7 +18,7 @@ export const highlights = [
 
 // Specs come from the back label of each drum.
 export const products = [
-  { name: "Antarctic Krill Protein", slug: "krill", flag: "🇳🇴", country: "Norway", text: "Krill protein meal from Antarctic krill (Euphausia superba), rich in amino acids and natural omega-3.",
+  { name: "Antarctic Krill Protein", slug: "krill", price: "5.66", flag: "🇳🇴", country: "Norway", text: "Krill protein meal from Antarctic krill (Euphausia superba), rich in amino acids and natural omega-3.",
     specs: [["Source", "Antarctic Krill (Euphausia superba)"], ["Protein", "96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "5%"], ["Ash (max)", "10%"], ["Form", "Krill protein meal (fine powder)"], ["Colour", "Light pink – light brown"], ["Application", "Aquaculture feed, animal feed"]],
     // Nutrition profile shown in the "View full label" popup. Add a percentage as a third item per row when lab values are available.
     details: [
@@ -53,7 +53,7 @@ export const products = [
         ["Chitin", "A marine fibre from the exoskeleton that supports gut health."],
       ] },
     ] },
-  { name: "Salmon Protein", slug: "salmon", flag: "🇩🇰", country: "Denmark", text: "Premium salmon protein meal for high-performance aquaculture and animal feed.",
+  { name: "Salmon Protein", slug: "salmon", price: "3.06", flag: "🇩🇰", country: "Denmark", text: "Premium salmon protein meal for high-performance aquaculture and animal feed.",
     specs: [["Source", "Salmon (marine fish)"], ["Protein", "96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "3%"], ["Ash (max)", "15%"], ["Form", "Fish protein meal (fine powder)"], ["Colour", "Light brown"], ["Application", "Aquaculture feed, animal feed"]],
     details: [
       { title: "Essential Amino Acids", items: [
@@ -84,7 +84,7 @@ export const products = [
         ["Minerals", "Rich in calcium, phosphorus, iron, zinc, magnesium, potassium and sodium."],
       ] },
     ] },
-  { name: "Tuna Protein", slug: "tuna", flag: "🇩🇰", country: "Denmark", text: "Concentrated tuna protein meal for strong growth and better feed conversion.",
+  { name: "Tuna Protein", slug: "tuna", price: "3.17", flag: "🇩🇰", country: "Denmark", text: "Concentrated tuna protein meal for strong growth and better feed conversion.",
     specs: [["Source", "Tuna (marine fish)"], ["Protein", "96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "3%"], ["Ash (max)", "15%"], ["Form", "Fish protein meal (fine powder)"], ["Colour", "Light brown"], ["Application", "Aquaculture feed, animal feed"]],
     details: [
       { title: "Essential Amino Acids", items: [
@@ -115,7 +115,7 @@ export const products = [
         ["Minerals", "Rich in calcium, phosphorus, iron, zinc, magnesium, potassium and sodium."],
       ] },
     ] },
-  { name: "Herring Protein", slug: "herring", flag: "🇩🇰", country: "Denmark", text: "Herring protein meal, naturally rich in amino acids and highly digestible.",
+  { name: "Herring Protein", slug: "herring", price: "5.91", flag: "🇩🇰", country: "Denmark", text: "Herring protein meal, naturally rich in amino acids and highly digestible.",
     specs: [["Source", "Herring (marine fish)"], ["Protein", "96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "3%"], ["Ash (max)", "15%"], ["Form", "Fish protein meal (fine powder)"], ["Colour", "Light brown"], ["Application", "Aquaculture feed, animal feed"]],
     details: [
       { title: "Essential Amino Acids", items: [
@@ -146,7 +146,7 @@ export const products = [
         ["Minerals", "Rich in calcium, phosphorus, iron, zinc, magnesium, potassium and sodium."],
       ] },
     ] },
-  { name: "Anchovy / Anchovet Protein", slug: "anchovy", flag: "🇳🇴", country: "Norway", text: "High-quality anchovy protein meal for aquafeed and animal nutrition formulations.",
+  { name: "Anchovy / Anchovet Protein", slug: "anchovy", price: "4.11", flag: "🇳🇴", country: "Norway", text: "High-quality anchovy protein meal for aquafeed and animal nutrition formulations.",
     specs: [["Source", "Anchovy / Anchovet (marine)"], ["Protein", "96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "3%"], ["Ash (max)", "15%"], ["Form", "Fish protein meal (fine powder)"], ["Colour", "Light brown"], ["Application", "Aquaculture feed, animal feed"]],
     details: [
       { title: "Essential Amino Acids", items: [
@@ -177,7 +177,7 @@ export const products = [
         ["Minerals", "Rich in calcium, phosphorus, iron, zinc, magnesium, potassium and sodium."],
       ] },
     ] },
-  { name: "Marine Collagen Peptides", slug: "collagen", flag: "🇳🇴", country: "Norway", text: "Water-soluble cold-water collagen peptides for food, nutraceutical and cosmetic use.",
+  { name: "Marine Collagen Peptides", slug: "collagen", price: "6.33", flag: "🇳🇴", country: "Norway", text: "Water-soluble cold-water collagen peptides for food, nutraceutical and cosmetic use.",
     specs: [["Source", "Marine (cold water)"], ["Collagen protein", "≥ 96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "1%"], ["Ash (max)", "3%"], ["Form", "Collagen peptides (fine powder)"], ["Colour", "Off white"], ["Solubility", "High (water soluble)"], ["Application", "Food, nutraceutical, cosmetic, aquaculture and animal feed"]],
     details: [
       { title: "Key Amino Acids (Collagen Profile)", items: [
