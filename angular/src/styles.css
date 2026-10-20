@@ -182,3 +182,5 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .ref-img:hover { transform: translateY(-4px); }
 .ref-img img { width: 100%; height: auto; }
 .ref-btn { margin-top: 18px; }
+.about-media { display: grid; gap: 22px; justify-items: center; }
+.about-ref { width: 100%; max-width: 480px; }
