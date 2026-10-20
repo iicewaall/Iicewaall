@@ -79,10 +79,6 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .app p { color: var(--muted); font-size: 15px; margin-top: 6px; }
 
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-.checks { list-style: none; display: grid; gap: 12px; }
-.checks li { position: relative; padding: 14px 16px 14px 50px; background: var(--ice); border-radius: 12px; color: var(--muted); }
-.checks li::before { content: "✓"; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 14px; }
-.checks b { color: var(--navy); }
 .about-logo { width: 100%; max-width: 480px; margin-inline: auto; }
 
 /* Contact */
@@ -178,3 +174,7 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .app-link h3, .app-link p { padding: 0 20px; }
 .app-link p { color: var(--green-dk); }
 .app-link .credit { display: block; padding: 6px 20px 0; font-size: 11px; color: var(--muted); }
+.ref-img { display: block; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 28px rgba(62, 104, 26, .18); transition: transform .2s; }
+.ref-img:hover { transform: translateY(-4px); }
+.ref-img img { width: 100%; height: auto; }
+.ref-btn { margin-top: 18px; }

@@ -1,5 +1,5 @@
 import { Component, HostListener, OnDestroy, OnInit, signal } from '@angular/core';
-import { applications, highlights, nav, products, quality, WHATSAPP } from './data';
+import { applications, highlights, nav, products, WHATSAPP } from './data';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,6 @@ export class App implements OnInit, OnDestroy {
   protected readonly highlights = highlights;
   protected readonly products = products;
   protected readonly applications = applications;
-  protected readonly quality = quality;
 
   protected readonly menuOpen = signal(false);
   protected readonly active = signal(nav[0].href);
