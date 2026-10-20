@@ -47,11 +47,6 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              {
-                "glob": "**/*",
-                "input": "../nextjs/public/assets",
-                "output": "assets"
               }
             ],
             "styles": [

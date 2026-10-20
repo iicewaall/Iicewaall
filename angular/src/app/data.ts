@@ -1,4 +1,4 @@
-// Site content in one place: edit products, applications and quality points here (same as nextjs/lib/data.ts).
+// Site content in one place: edit products, applications and quality points here.
 
 // WhatsApp number for the quote form, international format without "+" (e.g. "919876543210").
 // Leave empty until it is known; the form then shows a message instead of opening WhatsApp.

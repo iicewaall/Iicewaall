@@ -1,24 +1,18 @@
 # IICE WAALL – Premium Marine Proteins
 
-The IICE WAALL website, built twice from the same content:
+The IICE WAALL website, built with Angular 20 in `angular/`.
 
-| Folder | Framework | Live at |
-|---|---|---|
-| `nextjs/` | Next.js 15 (React, static export) | `/` (main site) |
-| `angular/` | Angular 20 | `/angular/` |
-
-Images live in `nextjs/public/assets/`; the Angular build copies them from there.
-Text and products are in `nextjs/lib/data.ts` and `angular/src/app/data.ts`. Keep the two files in step.
-Set `WHATSAPP` in both files to turn on the quote form.
+- Text and products: `angular/src/app/data.ts`. Set `WHATSAPP` there to turn on the quote form.
+- Page layout: `angular/src/app/app.html`. Styles: `angular/src/styles.css`.
+- Images: `angular/public/assets/`
 
 ## Run locally
 
 ```bash
-cd nextjs && npm install && npm run dev      # http://localhost:3000
-cd angular && npm install && npm start       # http://localhost:4200
+cd angular && npm install && npm start    # http://localhost:4200
 ```
 
 ## Deploy
 
-`.github/workflows/deploy.yml` builds both sites on every push to `main` and publishes them to GitHub Pages.
+`.github/workflows/deploy.yml` builds the site on every push to `main` and publishes it to GitHub Pages.
 One-time setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**.

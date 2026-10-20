@@ -1,5 +1,4 @@
-# Builds the Next.js site (served at the root) and the Angular site (served at /angular/)
-# and publishes both to GitHub Pages on every push to main.
+# Builds the Angular site and publishes it to GitHub Pages on every push to main.
 name: Deploy to GitHub Pages
 
 on:
@@ -27,34 +26,18 @@ jobs:
       - id: pages
         uses: actions/configure-pages@v5
 
-      - name: Build Next.js
-        working-directory: nextjs
-        env:
-          BASE_PATH: ${{ steps.pages.outputs.base_path }}
-          NEXT_TELEMETRY_DISABLED: 1
-        run: |
-          npm ci
-          npx next build
-
       - name: Build Angular
         working-directory: angular
         env:
           NG_CLI_ANALYTICS: "false"
         run: |
           npm ci
-          npx ng build --base-href "${{ steps.pages.outputs.base_path }}/angular/"
-
-      - name: Combine sites
-        run: |
-          mkdir -p site
-          cp -r nextjs/out/. site/
-          mkdir -p site/angular
-          cp -r angular/dist/. site/angular/
-          touch site/.nojekyll
+          npx ng build --base-href "${{ steps.pages.outputs.base_path }}/"
+          touch dist/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: angular/dist
 
   deploy:
     needs: build
