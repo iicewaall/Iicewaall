@@ -1,14 +1,5 @@
 // Site content in one place: edit products, applications and quality points here.
 
-export const nav = [
-  { href: "./", label: "Home" },
-  { href: "./#products", label: "Products" },
-  { href: "./#applications", label: "Applications" },
-  { href: "./#quality", label: "Quality" },
-  { href: "./#research", label: "Research" },
-  { href: "./#about", label: "About Us" },
-];
-
 export const highlights = [
   { title: "Nordic origin", sub: "Norway & Denmark" },
   { title: "High protein", sub: "Marine-sourced" },

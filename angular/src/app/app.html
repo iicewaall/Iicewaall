@@ -1,12 +1,6 @@
 <header class="site-header" id="top">
   <div class="wrap header-inner">
-    <a href="#top" class="logo" aria-label="IICE WAALL home"><img src="assets/logo-sm.png" alt="IICE WAALL" width="130" height="87" /></a>
-    <nav class="nav" [class.open]="menuOpen()" id="nav" aria-label="Primary">
-      @for (n of nav; track n.href) {
-        <a [href]="n.href" [class.active]="active() === n.href" (click)="menuOpen.set(false)">{{ n.label }}</a>
-      }
-    </nav>
-    <button class="menu-btn" aria-label="Open menu" [attr.aria-expanded]="menuOpen()" aria-controls="nav" (click)="menuOpen.set(!menuOpen())"><span></span><span></span><span></span></button>
+    <a href="./" class="logo" aria-label="IICE WAALL home"><img src="assets/logo-sm.png" alt="IICE WAALL" width="130" height="87" /></a>
   </div>
 </header>
 
