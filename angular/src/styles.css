@@ -134,6 +134,7 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .pp { padding: 28px 0 64px; }
 .back { display: inline-block; margin-bottom: 18px; font-weight: 700; color: var(--green-dk); }
 .pp h1 { font-family: var(--display); color: var(--navy); font-size: clamp(30px, 4vw, 46px); line-height: 1.1; margin: 4px 0 10px; }
+.pop-grid > * { min-width: 0; } .pop-grid h1 { overflow-wrap: anywhere; hyphens: auto; }
 .pop-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 36px; align-items: start; }
 .pop-grid img { width: 100%; height: auto; border-radius: 14px; background: var(--ice); }
 .pop-text { color: var(--muted); font-size: 17px; margin-bottom: 16px; }
@@ -146,7 +147,7 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .nutri li { display: grid; gap: 3px; font-size: 14px; color: var(--muted); padding: 12px 0; border-bottom: 1px solid var(--line); }
 .nutri b { color: var(--navy); font-size: 16px; }
 .nutri .pct { font-weight: 700; color: var(--green-dk); }
-@media (max-width: 900px) { .pop-grid { grid-template-columns: 1fr; } .nutri { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .pop-grid { grid-template-columns: minmax(0, 1fr); } .nutri { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .nutri { grid-template-columns: 1fr; } }
 .nutri li span:empty { display: none; }
 .app-link { display: block; padding: 0 0 20px; overflow: hidden; }
