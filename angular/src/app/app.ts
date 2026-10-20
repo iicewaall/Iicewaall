@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { applications, highlights, products, projects, quality } from './data';
+import { DEFAULT_LANG, Lang, LANGS, T } from './i18n';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,30 @@ export class App implements OnInit, OnDestroy {
   protected readonly applications = applications;
   protected readonly quality = quality;
   protected readonly projects = projects;
+
+  // Language: Danish by default; the visitor's choice is remembered in this browser
+  protected readonly langs = LANGS;
+  protected readonly lang = signal<Lang>(App.savedLang());
+  private static savedLang(): Lang {
+    try { const v = localStorage.getItem('lang'); if (LANGS.some((l) => l.code === v)) return v as Lang; } catch {}
+    return DEFAULT_LANG;
+  }
+  protected t(s?: string): string {
+    const l = this.lang();
+    if (!s) return '';
+    if (l === 'en') return s;
+    const r = T[s];
+    return r ? r[l === 'da' ? 0 : 1] : s;
+  }
+  protected setLang(l: Lang) {
+    this.lang.set(l);
+    try { localStorage.setItem('lang', l); } catch {}
+    this.applyLang();
+  }
+  private applyLang() {
+    document.documentElement.lang = LANGS.find((x) => x.code === this.lang())!.html;
+    if (this.page) document.title = `${this.t(this.page.name)} – IICE WAALL`;
+  }
 
 
   // Hero slider: advances every 5 s, pauses on hover/focus and for reduced motion
@@ -40,7 +65,8 @@ export class App implements OnInit, OnDestroy {
   private timer?: ReturnType<typeof setInterval>;
 
   ngOnInit() {
-    if (this.page) { document.title = `${this.page.name} – IICE WAALL`; window.scrollTo(0, 0); return; }
+    this.applyLang();
+    if (this.page) { window.scrollTo(0, 0); return; }
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       this.timer = setInterval(() => { if (!this.paused && !document.hidden) this.go(this.slide() + 1); }, 5000);
     }

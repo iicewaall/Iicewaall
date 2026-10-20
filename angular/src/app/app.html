@@ -1,58 +1,58 @@
 <header class="site-header" id="top">
   <div class="wrap header-inner">
     <a href="./" class="logo" aria-label="IICE WAALL home"><img src="assets/logo-sm.png" alt="IICE WAALL" width="130" height="87" /></a>
-    <p class="eu-badge"><span class="eu-flag" aria-hidden="true">🇪🇺</span> Funded by the European Union</p>
+    <p class="eu-badge"><span class="eu-flag" aria-hidden="true">🇪🇺</span> {{ t('Funded by the European Union') }}</p>
   </div>
 </header>
 
 @if (!page) {
 <main>
-  <section class="hero" aria-label="Premium marine proteins from pure Nordic waters">
+  <section class="hero" [attr.aria-label]="t('Premium marine proteins from pure Nordic waters')">
     <div class="slides" (mouseenter)="paused = true" (mouseleave)="paused = false" (focusin)="paused = true" (focusout)="paused = false">
       @for (sl of slides; track sl.src; let i = $index) {
         <img class="hero-img slide" [class.on]="i === slide()" [src]="'assets/' + sl.src + '.webp?v=2'" [attr.srcset]="'assets/' + sl.src + '-900.webp?v=2 900w, assets/' + sl.src + '.webp?v=2 1672w'" sizes="100vw" width="1672" height="791" [alt]="sl.alt" [attr.aria-hidden]="i !== slide()" [attr.fetchpriority]="i === 0 ? 'high' : null" [attr.loading]="i === 0 ? null : 'lazy'" />
       }
-      <button class="sl-arrow prev" type="button" aria-label="Previous slide" (click)="go(slide() - 1)">‹</button>
-      <button class="sl-arrow next" type="button" aria-label="Next slide" (click)="go(slide() + 1)">›</button>
+      <button class="sl-arrow prev" type="button" [attr.aria-label]="t('Previous slide')" (click)="go(slide() - 1)">‹</button>
+      <button class="sl-arrow next" type="button" [attr.aria-label]="t('Next slide')" (click)="go(slide() + 1)">›</button>
       <div class="sl-dots">
         @for (sl of slides; track sl.src; let i = $index) {
-          <button type="button" [class.on]="i === slide()" [attr.aria-label]="'Show slide ' + (i + 1)" [attr.aria-current]="i === slide()" (click)="go(i)"></button>
+          <button type="button" [class.on]="i === slide()" [attr.aria-label]="t('Show slide') + ' ' + (i + 1)" [attr.aria-current]="i === slide()" (click)="go(i)"></button>
         }
       </div>
     </div>
     <div class="hero-cta wrap">
-      <a href="#products" class="btn btn-primary">View Products <span aria-hidden="true">→</span></a>
+      <a href="#products" class="btn btn-primary">{{ t('View Products') }} <span aria-hidden="true">→</span></a>
     </div>
   </section>
 
-  <section class="strip" aria-label="Highlights">
+  <section class="strip" [attr.aria-label]="t('Highlights')">
     <div class="wrap strip-inner">
       @for (h of highlights; track h.title) {
-        <div><b>{{ h.title }}</b><span>{{ h.sub }}</span></div>
+        <div><b>{{ t(h.title) }}</b><span>{{ t(h.sub) }}</span></div>
       }
     </div>
   </section>
 
   <section class="section" id="products">
     <div class="wrap">
-      <p class="eyebrow">Our Range</p>
-      <h2>Premium Marine Proteins</h2>
-      <p class="lead">Six marine ingredients, each processed from carefully sourced Nordic catch and packed in sealed 50 kg drums.</p>
+      <p class="eyebrow">{{ t('Our Range') }}</p>
+      <h2>{{ t('Premium Marine Proteins') }}</h2>
+      <p class="lead">{{ t('Six marine ingredients, each processed from carefully sourced Nordic catch and packed in sealed 50 kg drums.') }}</p>
       <div class="grid products">
         @for (p of products; track p.slug) {
           <article class="card product">
-            <a [href]="'product/' + p.slug + '/'" class="card-img"><img [src]="'assets/front-' + p.slug + '.webp'" [alt]="'IICE WAALL ' + p.name + ', 50 kg drum, made in ' + p.country" loading="lazy" width="560" height="808" /></a>
+            <a [href]="'product/' + p.slug + '/'" class="card-img"><img [src]="'assets/front-' + p.slug + '.webp'" [alt]="'IICE WAALL ' + t(p.name) + ', ' + t('50 kg drum') + ', ' + t('Made in') + ' ' + t(p.country)" loading="lazy" width="560" height="808" /></a>
             <div>
-              <h3><a [href]="'product/' + p.slug + '/'">{{ p.name }}</a></h3>
-              <p class="origin">{{ p.flag }} Made in {{ p.country }} · 50 kg</p>
+              <h3><a [href]="'product/' + p.slug + '/'">{{ t(p.name) }}</a></h3>
+              <p class="origin">{{ p.flag }} {{ t('Made in') }} {{ t(p.country) }} · 50 kg</p>
               <p class="price">$ {{ p.price }} <span>/ kg</span></p>
-              <p>{{ p.text }}</p>
+              <p>{{ t(p.text) }}</p>
               <details class="specs">
-                <summary>Specifications</summary>
+                <summary>{{ t('Specifications') }}</summary>
                 <dl>
-                  @for (sp of p.specs; track sp[0]) { <dt>{{ sp[0] }}</dt><dd>{{ sp[1] }}</dd> }
+                  @for (sp of p.specs; track sp[0]) { <dt>{{ t(sp[0]) }}</dt><dd>{{ t(sp[1]) }}</dd> }
                 </dl>
-                <a class="label-btn" [href]="'product/' + p.slug + '/'">View full label{{ details(p).length ? ' & nutrition' : '' }} →</a>
+                <a class="label-btn" [href]="'product/' + p.slug + '/'">{{ t('View full label') }}{{ details(p).length ? t(' & nutrition') : '' }} →</a>
               </details>
             </div>
           </article>
@@ -63,18 +63,18 @@
 
   <section class="section alt" id="applications">
     <div class="wrap">
-      <p class="eyebrow">Applications</p>
-      <h2>Where Our Proteins Work</h2>
+      <p class="eyebrow">{{ t('Applications') }}</p>
+      <h2>{{ t('Where Our Proteins Work') }}</h2>
       <div class="grid apps">
         @for (x of applications; track x.title) {
           @if (x.href) {
             <a class="card app app-link" [href]="x.href" target="_blank" rel="noopener">
-              <img [src]="'assets/' + x.img" [alt]="x.alt" loading="lazy" width="640" height="320" />
-              <h3>{{ x.title }}</h3><p>{{ x.text }}</p>
-              @if ('credit' in x) { <small class="credit">{{ x.credit }}</small> }
+              <img [src]="'assets/' + x.img" [alt]="t(x.alt)" loading="lazy" width="640" height="320" />
+              <h3>{{ t(x.title) }}</h3><p>{{ t(x.text) }}</p>
+              @if ('credit' in x) { <small class="credit">{{ t(x.credit) }}</small> }
             </a>
           } @else {
-            <div class="card app"><span class="ico" aria-hidden="true">{{ x.icon }}</span><h3>{{ x.title }}</h3><p>{{ x.text }}</p></div>
+            <div class="card app"><span class="ico" aria-hidden="true">{{ x.icon }}</span><h3>{{ t(x.title) }}</h3><p>{{ t(x.text) }}</p></div>
           }
         }
       </div>
@@ -84,13 +84,13 @@
   <section class="section" id="quality">
     <div class="wrap split">
       <div>
-        <p class="eyebrow">Quality</p>
-        <h2>Pure Nordic Quality, Batch After Batch</h2>
-        <p class="lead">From cold Nordic waters to a sealed drum, every step is controlled to keep our proteins fresh, clean and consistent.</p>
+        <p class="eyebrow">{{ t('Quality') }}</p>
+        <h2>{{ t('Pure Nordic Quality, Batch After Batch') }}</h2>
+        <p class="lead">{{ t('From cold Nordic waters to a sealed drum, every step is controlled to keep our proteins fresh, clean and consistent.') }}</p>
       </div>
       <ul class="checks">
         @for (q of quality; track q[0]) {
-          <li><b>{{ q[0] }}</b> {{ q[1] }}</li>
+          <li><b>{{ t(q[0]) }}</b> {{ t(q[1]) }}</li>
         }
       </ul>
     </div>
@@ -99,22 +99,22 @@
   <section class="section" id="research">
     <div class="wrap split">
       <a class="ref-img" href="https://www.stir.ac.uk/about/faculties/natural-sciences/aquaculture/national-aquaculture-technology-and-innovation-hub/" target="_blank" rel="noopener">
-        <img src="assets/stirling-natih.webp" alt="Researchers beside aquaculture trial tanks in a research lab" loading="lazy" width="900" height="583" />
+        <img src="assets/stirling-natih.webp" [alt]="t('Researchers beside aquaculture trial tanks in a research lab')" loading="lazy" width="900" height="583" />
       </a>
       <div>
-        <p class="eyebrow">Research Reference</p>
+        <p class="eyebrow">{{ t('Research Reference') }}</p>
         <h2>National Aquaculture Technology and Innovation Hub</h2>
-        <p class="lead">Institute of Aquaculture, University of Stirling (UK) – research facilities for aquaculture technology, fish nutrition and health.</p>
-        <a class="btn btn-primary ref-btn" href="https://www.stir.ac.uk/about/faculties/natural-sciences/aquaculture/national-aquaculture-technology-and-innovation-hub/" target="_blank" rel="noopener">Visit University of Stirling <span aria-hidden="true">→</span></a>
+        <p class="lead">{{ t('Institute of Aquaculture, University of Stirling (UK) – research facilities for aquaculture technology, fish nutrition and health.') }}</p>
+        <a class="btn btn-primary ref-btn" href="https://www.stir.ac.uk/about/faculties/natural-sciences/aquaculture/national-aquaculture-technology-and-innovation-hub/" target="_blank" rel="noopener">{{ t('Visit University of Stirling') }} <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
 
   <section class="section network" id="network">
     <div class="wrap">
-      <p class="eyebrow">Our Network</p>
-      <h2>Our Sourcing &amp; Research Network</h2>
-      <p class="lead">We import our marine ingredients through a network of European suppliers, producers and research institutes.</p>
+      <p class="eyebrow">{{ t('Our Network') }}</p>
+      <h2>{{ t('Our Sourcing & Research Network') }}</h2>
+      <p class="lead">{{ t('We import our marine ingredients through a network of European suppliers, producers and research institutes.') }}</p>
       <img class="logos" src="assets/network-logos.webp" alt="Logos: Nofima, Universidade Católica Portuguesa, OAMK, Vizelpas, bioMérieux, University of Copenhagen, CiaoTech, RISE, University of Veterinary Medicine, Innoscentia, Chr. Hansen, Norsk Kylling, Cermaq, Lusiaves, Ifremer, CITPPM, Primor, Noel" loading="lazy" width="960" height="315" />
     </div>
   </section>
@@ -123,31 +123,31 @@
     <div class="wrap split">
       <div class="about-media">
         <img class="about-logo" src="assets/logo.webp" alt="IICE WAALL logo" loading="lazy" width="900" height="590" />
-        <a class="ref-img about-ref" href="https://www.sfa.gov.sg/food-science-and-technology/research-centres/marine-aquaculture-centre-mac" target="_blank" rel="noopener" aria-label="Marine Aquaculture Centre, Singapore Food Agency (opens in a new tab)">
+        <a class="ref-img about-ref" href="https://www.sfa.gov.sg/food-science-and-technology/research-centres/marine-aquaculture-centre-mac" target="_blank" rel="noopener" [attr.aria-label]="'Marine Aquaculture Centre, Singapore Food Agency ' + t('(opens in a new tab)')">
           <img src="assets/sfa-mac.webp" alt="Marine Aquaculture Centre, Singapore Food Agency" loading="lazy" width="645" height="437" />
         </a>
       </div>
       <div>
-        <p class="eyebrow">About Us</p>
+        <p class="eyebrow">{{ t('About Us') }}</p>
         <h2>IICE WAALL</h2>
-        <p class="lead">IICE WAALL brings premium marine proteins from the pure waters of Norway and Denmark to feed, pet food and nutrition manufacturers. We focus on clean sourcing, reliable bulk supply and consistent quality, so our partners can build better products.</p>
-          <p class="moq"><b>Minimum order: 6 tons</b> <span>(120 drums of 50 kg)</span></p>
+        <p class="lead">{{ t('IICE WAALL brings premium marine proteins from the pure waters of Norway and Denmark to feed, pet food and nutrition manufacturers. We focus on clean sourcing, reliable bulk supply and consistent quality, so our partners can build better products.') }}</p>
+          <p class="moq"><b>{{ t('Minimum order: 6 tons') }}</b> <span>{{ t('(120 drums of 50 kg)') }}</span></p>
       </div>
     </div>
   </section>
 
   <section class="section contact" id="contact">
     <div class="wrap">
-      <p class="eyebrow">Research Partner</p>
-      <h2>Sustainable food for all</h2>
-      <p class="lead">The Norwegian food research institute Nofima provides research-based knowledge and innovations for actors in all parts of the food systems.</p>
-      <h3 class="proj-title">Horizon Europe projects led or joined by Nofima</h3>
+      <p class="eyebrow">{{ t('Research Partner') }}</p>
+      <h2>{{ t('Sustainable food for all') }}</h2>
+      <p class="lead">{{ t('The Norwegian food research institute Nofima provides research-based knowledge and innovations for actors in all parts of the food systems.') }}</p>
+      <h3 class="proj-title">{{ t('Horizon Europe projects led or joined by Nofima') }}</h3>
       <ul class="projects">
         @for (pr of projects; track pr[0]) {
-          <li><b>{{ pr[0] }}</b><span>{{ pr[1] }}</span><small>{{ pr[2] }}</small></li>
+          <li><b>{{ pr[0] }}</b><span>{{ t(pr[1]) }}</span><small>{{ pr[2] }}</small></li>
         }
       </ul>
-      <a class="btn proj-btn" href="https://nofima.com/" target="_blank" rel="noopener">Visit nofima.com <span aria-hidden="true">→</span></a>
+      <a class="btn proj-btn" href="https://nofima.com/" target="_blank" rel="noopener">{{ t('Visit nofima.com') }} <span aria-hidden="true">→</span></a>
     </div>
   </section>
 </main>
@@ -155,26 +155,26 @@
 } @else {
 <main class="pp" id="top">
   <div class="wrap">
-    <a class="back" href="./#products">← All products</a>
+    <a class="back" href="./#products">{{ t('← All products') }}</a>
     <div class="pop-grid">
-      <img [src]="'assets/back-' + page.slug + '.webp'" [alt]="'Back label of IICE WAALL ' + page.name" width="900" height="1299" />
+      <img [src]="'assets/back-' + page.slug + '.webp'" [alt]="t('Back label of') + ' IICE WAALL ' + t(page.name)" width="900" height="1299" />
       <div>
-        <p class="eyebrow">{{ page.flag }} Made in {{ page.country }} · 50 kg</p>
-        <h1>{{ page.name }}</h1>
+        <p class="eyebrow">{{ page.flag }} {{ t('Made in') }} {{ t(page.country) }} · 50 kg</p>
+        <h1>{{ t(page.name) }}</h1>
         <p class="price big">$ {{ page.price }} <span>/ kg (USD)</span></p>
-        <p class="pop-text">{{ page.text }}</p>
-        <h3>Specifications</h3>
+        <p class="pop-text">{{ t(page.text) }}</p>
+        <h3>{{ t('Specifications') }}</h3>
         <dl class="pop-specs">
-          @for (sp of page.specs; track sp[0]) { <dt>{{ sp[0] }}</dt><dd>{{ sp[1] }}</dd> }
+          @for (sp of page.specs; track sp[0]) { <dt>{{ t(sp[0]) }}</dt><dd>{{ t(sp[1]) }}</dd> }
         </dl>
-        <p class="moq"><b>Minimum order: 6 tons</b> <span>(120 drums of 50 kg)</span></p>
+        <p class="moq"><b>{{ t('Minimum order: 6 tons') }}</b> <span>{{ t('(120 drums of 50 kg)') }}</span></p>
       </div>
     </div>
     @for (d of details(page); track d.title) {
       <section class="pop-sec">
-        <h2>{{ d.title }}</h2>
+        <h2>{{ t(d.title) }}</h2>
         <ul class="nutri">
-          @for (it of d.items; track it[0]) { <li><b>{{ it[0] }}</b>@if (it[2]) {<span class="pct">{{ it[2] }}</span>}<span>{{ it[1] }}</span></li> }
+          @for (it of d.items; track it[0]) { <li><b>{{ t(it[0]) }}</b>@if (it[2]) {<span class="pct">{{ it[2] }}</span>}<span>{{ t(it[1]) }}</span></li> }
         </ul>
       </section>
     }
@@ -185,7 +185,12 @@
 <footer class="footer">
   <div class="wrap footer-inner">
     <img src="assets/logo-sm.png" alt="IICE WAALL" width="110" height="74" loading="lazy" />
-    <p>IICE WAALL · Premium Marine Proteins from Pure Nordic Waters</p>
-    <a href="#top">Back to top ↑</a>
+    <p>{{ t('IICE WAALL · Premium Marine Proteins from Pure Nordic Waters') }}</p>
+    <a href="#top">{{ t('Back to top ↑') }}</a>
+  </div>
+  <div class="wrap lang-bar" role="group" [attr.aria-label]="t('Language')">
+    @for (l of langs; track l.code) {
+      <button type="button" class="lang-btn" [class.on]="lang() === l.code" [attr.aria-pressed]="lang() === l.code" [attr.lang]="l.html" (click)="setLang(l.code)"><span aria-hidden="true">{{ l.flag }}</span> {{ l.label }}</button>
+    }
   </div>
 </footer>

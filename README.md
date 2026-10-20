@@ -2,7 +2,8 @@
 
 The IICE WAALL website, built with Angular 20 in `angular/`.
 
-- Text, products and research projects: `angular/src/app/data.ts`.
+- Text, products and research projects: `angular/src/app/data.ts` (English).
+- Danish and Norwegian translations: `angular/src/app/i18n.ts`, keyed by the English text. The site opens in Danish; visitors can switch language at the bottom of each page.
 - Page layout: `angular/src/app/app.html`. Styles: `angular/src/styles.css`.
 - Images: `angular/public/assets/`
 
