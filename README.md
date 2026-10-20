@@ -1,16 +1,24 @@
-## Hi there 👋
+# IICE WAALL – Premium Marine Proteins
 
-<!--
-**iicewaall/Iicewaall** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+The IICE WAALL website, built twice from the same content:
 
-Here are some ideas to get you started:
+| Folder | Framework | Live at |
+|---|---|---|
+| `nextjs/` | Next.js 15 (React, static export) | `/` (main site) |
+| `angular/` | Angular 20 | `/angular/` |
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Images live in `nextjs/public/assets/`; the Angular build copies them from there.
+Text and products are in `nextjs/lib/data.ts` and `angular/src/app/data.ts`. Keep the two files in step.
+Set `WHATSAPP` in both files to turn on the quote form.
+
+## Run locally
+
+```bash
+cd nextjs && npm install && npm run dev      # http://localhost:3000
+cd angular && npm install && npm start       # http://localhost:4200
+```
+
+## Deploy
+
+`.github/workflows/deploy.yml` builds both sites on every push to `main` and publishes them to GitHub Pages.
+One-time setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
