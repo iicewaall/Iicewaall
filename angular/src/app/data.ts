@@ -15,7 +15,7 @@ export const nav = [
 export const highlights = [
   { title: "Nordic origin", sub: "Norway & Denmark" },
   { title: "High protein", sub: "Marine-sourced" },
-  { title: "50 kg drums", sub: "Bulk supply" },
+  { title: "50 kg drums", sub: "MOQ 6 tons" },
   { title: "Cold-chain", sub: "Fresh to the drum" },
 ];
 

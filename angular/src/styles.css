@@ -141,3 +141,7 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .specs dd { color: var(--text); font-weight: 500; }
 .specs a { display: inline-block; margin-top: 6px; font-size: 13px; font-weight: 700; color: var(--green-dk); text-decoration: underline; }
 @media (max-width: 860px) and (min-width: 561px) { .products { grid-template-columns: repeat(2, 1fr); } }
+
+/* Minimum order note in About Us */
+.moq { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 18px; padding: 10px 16px; border-radius: 12px; background: var(--green); color: #fff; font-size: 17px; }
+.moq span { color: #eef7e2; font-size: 15px; }
