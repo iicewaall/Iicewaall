@@ -72,7 +72,14 @@
       <h2>Where Our Proteins Work</h2>
       <div class="grid apps">
         @for (x of applications; track x.title) {
-          <div class="card app"><span class="ico" aria-hidden="true">{{ x.icon }}</span><h3>{{ x.title }}</h3><p>{{ x.text }}</p></div>
+          @if (x.href) {
+            <a class="card app app-link" [href]="x.href" target="_blank" rel="noopener">
+              <img [src]="'assets/' + x.img" alt="Nofima researchers in a feed technology lab (photo: Nofima)" loading="lazy" width="640" height="319" />
+              <h3>{{ x.title }}</h3><p>{{ x.text }}</p>
+            </a>
+          } @else {
+            <div class="card app"><span class="ico" aria-hidden="true">{{ x.icon }}</span><h3>{{ x.title }}</h3><p>{{ x.text }}</p></div>
+          }
         }
       </div>
     </div>

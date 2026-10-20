@@ -214,7 +214,7 @@ export const products = [
 ];
 
 export const applications = [
-  { icon: "🐟", title: "Aquafeed", text: "Fish and shrimp feed for faster growth, better FCR and stronger health." },
+  { icon: "🔬", title: "Research Reference: Nofima", text: "Norwegian Institute of Food, Fisheries and Aquaculture Research – marine ingredients and feed research. Visit nofima.com →", img: "nofima-lab.webp", href: "https://nofima.com/" },
   { icon: "🐾", title: "Pet Food", text: "Highly palatable marine protein for premium dog and cat food." },
   { icon: "🐄", title: "Animal Nutrition", text: "Protein boost for poultry, livestock and young-animal diets." },
   { icon: "💊", title: "Nutraceuticals", text: "Collagen peptides for supplements, beauty and functional foods." },
