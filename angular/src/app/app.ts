@@ -1,20 +1,17 @@
-import { Component, HostListener, OnDestroy, OnInit, signal } from '@angular/core';
-import { applications, highlights, nav, products, projects, quality } from './data';
+import { Component, OnDestroy, OnInit, signal } from '@angular/core';
+import { applications, highlights, products, projects, quality } from './data';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
 })
 export class App implements OnInit, OnDestroy {
-  protected readonly nav = nav;
   protected readonly highlights = highlights;
   protected readonly products = products;
   protected readonly applications = applications;
   protected readonly quality = quality;
   protected readonly projects = projects;
 
-  protected readonly menuOpen = signal(false);
-  protected readonly active = signal(nav[0].href);
 
   // Hero slider: advances every 5 s, pauses on hover/focus and for reduced motion
   protected readonly slides = [
@@ -53,17 +50,5 @@ export class App implements OnInit, OnDestroy {
 
   go(i: number) { this.slide.set((i + this.slides.length) % this.slides.length); }
 
-  // Highlight the nav link of the section on screen
-  @HostListener('window:scroll')
-  onScroll() {
-    if (this.page) return;
-    let cur = nav[0].href;
-    for (const { href } of nav) {
-      const id = href.split('#')[1];
-      const el = id && document.getElementById(id);
-      if (el && el.getBoundingClientRect().top <= 120) cur = href;
-    }
-    this.active.set(cur);
-  }
 
 }
