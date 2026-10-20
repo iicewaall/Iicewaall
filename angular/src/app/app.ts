@@ -1,11 +1,11 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit, signal } from '@angular/core';
 import { applications, highlights, nav, products, quality, WHATSAPP } from './data';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
 })
-export class App {
+export class App implements OnInit, OnDestroy {
   protected readonly nav = nav;
   protected readonly highlights = highlights;
   protected readonly products = products;
@@ -16,6 +16,26 @@ export class App {
   protected readonly menuOpen = signal(false);
   protected readonly active = signal('#top');
   protected readonly note = signal('');
+
+  // Hero slider: advances every 5 s, pauses on hover/focus and for reduced motion
+  protected readonly slides = [
+    { src: 'hero', alt: 'IICE WAALL premium marine proteins from pure Nordic waters – five protein drums on ice in front of Nordic fjords' },
+    { src: 'slide-2', alt: 'New: IICE WAALL Antarctic Krill Protein, 96% protein (lab tested), rich in amino acids and omega-3, 50 kg drums, made in Norway' },
+    { src: 'slide-3', alt: 'Six premium marine proteins: Krill, Salmon, Tuna, Herring, Anchovy and Marine Collagen Peptides' },
+  ];
+  protected readonly slide = signal(0);
+  protected paused = false;
+  private timer?: ReturnType<typeof setInterval>;
+
+  ngOnInit() {
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.timer = setInterval(() => { if (!this.paused && !document.hidden) this.go(this.slide() + 1); }, 5000);
+    }
+  }
+
+  ngOnDestroy() { clearInterval(this.timer); }
+
+  go(i: number) { this.slide.set((i + this.slides.length) % this.slides.length); }
 
   // Highlight the nav link of the section on screen
   @HostListener('window:scroll')

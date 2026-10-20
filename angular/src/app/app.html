@@ -13,7 +13,18 @@
 
 <main>
   <section class="hero" aria-label="Premium marine proteins from pure Nordic waters">
-    <img class="hero-img" src="assets/hero.webp" srcset="assets/hero-900.webp 900w, assets/hero.webp 1672w" sizes="100vw" width="1672" height="791" alt="IICE WAALL marine protein drums – Anchovy, Herring, Tuna, Salmon Protein and Marine Collagen Peptides – on ice in front of Nordic fjords" fetchpriority="high" />
+    <div class="slides" (mouseenter)="paused = true" (mouseleave)="paused = false" (focusin)="paused = true" (focusout)="paused = false">
+      @for (sl of slides; track sl.src; let i = $index) {
+        <img class="hero-img slide" [class.on]="i === slide()" [src]="'assets/' + sl.src + '.webp'" [attr.srcset]="'assets/' + sl.src + '-900.webp 900w, assets/' + sl.src + '.webp 1672w'" sizes="100vw" width="1672" height="791" [alt]="sl.alt" [attr.aria-hidden]="i !== slide()" [attr.fetchpriority]="i === 0 ? 'high' : null" [attr.loading]="i === 0 ? null : 'lazy'" />
+      }
+      <button class="sl-arrow prev" type="button" aria-label="Previous slide" (click)="go(slide() - 1)">‹</button>
+      <button class="sl-arrow next" type="button" aria-label="Next slide" (click)="go(slide() + 1)">›</button>
+      <div class="sl-dots">
+        @for (sl of slides; track sl.src; let i = $index) {
+          <button type="button" [class.on]="i === slide()" [attr.aria-label]="'Show slide ' + (i + 1)" [attr.aria-current]="i === slide()" (click)="go(i)"></button>
+        }
+      </div>
+    </div>
     <div class="hero-cta wrap">
       <a href="#products" class="btn btn-primary">View Products <span aria-hidden="true">→</span></a>
       <a href="#contact" class="btn btn-ghost">Request a Quote</a>
