@@ -2,7 +2,7 @@
 
 The IICE WAALL website, built with Angular 20 in `angular/`.
 
-- Text and products: `angular/src/app/data.ts`. Set `WHATSAPP` there to turn on the quote form.
+- Text, products and research projects: `angular/src/app/data.ts`.
 - Page layout: `angular/src/app/app.html`. Styles: `angular/src/styles.css`.
 - Images: `angular/public/assets/`
 

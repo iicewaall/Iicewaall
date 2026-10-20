@@ -1,5 +1,5 @@
 import { Component, HostListener, OnDestroy, OnInit, signal } from '@angular/core';
-import { applications, highlights, nav, products, quality, WHATSAPP } from './data';
+import { applications, highlights, nav, products, projects, quality } from './data';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +11,10 @@ export class App implements OnInit, OnDestroy {
   protected readonly products = products;
   protected readonly applications = applications;
   protected readonly quality = quality;
+  protected readonly projects = projects;
 
   protected readonly menuOpen = signal(false);
   protected readonly active = signal(nav[0].href);
-  protected readonly note = signal('');
 
   // Hero slider: advances every 5 s, pauses on hover/focus and for reduced motion
   protected readonly slides = [
@@ -61,16 +61,4 @@ export class App implements OnInit, OnDestroy {
     this.active.set(cur);
   }
 
-  // Quote form: opens WhatsApp with the enquiry filled in
-  submit(e: Event) {
-    e.preventDefault();
-    if (!WHATSAPP) {
-      this.note.set('Thank you! Our contact number will be added here shortly.');
-      return;
-    }
-    const f = new FormData(e.target as HTMLFormElement);
-    const body = `IICE WAALL enquiry\nName: ${f.get('name')}\nCompany: ${f.get('company')}\nPhone: ${f.get('phone')}\nProduct: ${f.get('product')}\n\n${f.get('message')}`;
-    window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(body)}`, '_blank', 'noopener');
-    this.note.set('WhatsApp will open with your enquiry. Just tap Send.');
-  }
 }

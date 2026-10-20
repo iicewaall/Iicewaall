@@ -1,9 +1,5 @@
 // Site content in one place: edit products, applications and quality points here.
 
-// WhatsApp number for the quote form, international format without "+" (e.g. "919876543210").
-// Leave empty until it is known; the form then shows a message instead of opening WhatsApp.
-export const WHATSAPP = "";
-
 export const nav = [
   { href: "./", label: "Home" },
   { href: "./#products", label: "Products" },
@@ -227,4 +223,16 @@ export const quality = [
   ["Batch-tested", "for protein, moisture and purity"],
   ["Sealed 50 kg drums", "for safe storage and transport"],
   ["Documentation", "available on request with every order"],
+];
+
+// Horizon Europe projects Nofima leads or takes part in (shown in the research partner section)
+export const projects = [
+  ["SelectOrganic", "Development of selective breeding programs for boosting organic fish farming in Europe", "2025 – 2029"],
+  ["MICROORC", "Bacterial cultures to minimize food waste", "2023 – 2027"],
+  ["OCCAM", "Adaptations to climate changes in aquaculture", "2025 – 2029"],
+  ["BIO2", "New, eco-friendly products for organic farming", "2025 – 2029"],
+  ["BioProtect", "Better tools for taking care of marine biodiversity", "2024 – 2028"],
+  ["VALORISH", "Green valorisation cascade approach of fish waste and by-products", "2024 – 2027"],
+  ["AlgaeProBANOS", "Accelerating algae product and market development in the Baltic and North Sea", "2023 – 2027"],
+  ["GUARDIANS", "Digital solutions for small- and medium-sized farms", "2023 – 2027"],
 ];
