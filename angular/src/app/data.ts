@@ -20,12 +20,20 @@ export const highlights = [
   { title: "Cold-chain", sub: "Fresh to the drum" },
 ];
 
+// Specs come from the back label of each drum.
 export const products = [
-  { name: "Anchovy Protein", img: "can-1.webp", flag: "🇳🇴", country: "Norway", text: "Highly digestible protein with a rich amino acid profile for feed and nutrition formulations." },
-  { name: "Herring Protein", img: "can-2.webp", flag: "🇩🇰", country: "Denmark", text: "Naturally rich in marine nutrients, ideal for aquafeed and premium pet food." },
-  { name: "Tuna Protein", img: "can-3.webp", flag: "🇩🇰", country: "Denmark", text: "Concentrated, high-quality protein for strong growth and palatability." },
-  { name: "Salmon Protein", img: "can-4.webp", flag: "🇩🇰", country: "Denmark", text: "Clean, premium salmon protein for high-performance feed and nutrition." },
-  { name: "Marine Collagen Peptides", img: "can-5.webp", flag: "🇳🇴", country: "Norway", text: "Low-molecular peptides for nutraceutical, beauty and functional food use." },
+  { name: "Antarctic Krill Protein", slug: "krill", flag: "🇳🇴", country: "Norway", text: "Krill protein meal from Antarctic krill (Euphausia superba), rich in amino acids and natural omega-3.",
+    specs: [["Source", "Antarctic Krill (Euphausia superba)"], ["Protein", "96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "5%"], ["Ash (max)", "10%"], ["Form", "Krill protein meal (fine powder)"], ["Colour", "Light pink – light brown"], ["Application", "Aquaculture feed, animal feed"]] },
+  { name: "Salmon Protein", slug: "salmon", flag: "🇩🇰", country: "Denmark", text: "Premium salmon protein meal for high-performance aquaculture and animal feed.",
+    specs: [["Source", "Salmon (marine fish)"], ["Protein", "96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "3%"], ["Ash (max)", "15%"], ["Form", "Fish protein meal (fine powder)"], ["Colour", "Light brown"], ["Application", "Aquaculture feed, animal feed"]] },
+  { name: "Tuna Protein", slug: "tuna", flag: "🇩🇰", country: "Denmark", text: "Concentrated tuna protein meal for strong growth and better feed conversion.",
+    specs: [["Source", "Tuna (marine fish)"], ["Protein", "96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "3%"], ["Ash (max)", "15%"], ["Form", "Fish protein meal (fine powder)"], ["Colour", "Light brown"], ["Application", "Aquaculture feed, animal feed"]] },
+  { name: "Herring Protein", slug: "herring", flag: "🇩🇰", country: "Denmark", text: "Herring protein meal, naturally rich in amino acids and highly digestible.",
+    specs: [["Source", "Herring (marine fish)"], ["Protein", "96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "3%"], ["Ash (max)", "15%"], ["Form", "Fish protein meal (fine powder)"], ["Colour", "Light brown"], ["Application", "Aquaculture feed, animal feed"]] },
+  { name: "Anchovy / Anchovet Protein", slug: "anchovy", flag: "🇳🇴", country: "Norway", text: "High-quality anchovy protein meal for aquafeed and animal nutrition formulations.",
+    specs: [["Source", "Anchovy / Anchovet (marine)"], ["Protein", "96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "3%"], ["Ash (max)", "15%"], ["Form", "Fish protein meal (fine powder)"], ["Colour", "Light brown"], ["Application", "Aquaculture feed, animal feed"]] },
+  { name: "Marine Collagen Peptides", slug: "collagen", flag: "🇳🇴", country: "Norway", text: "Water-soluble cold-water collagen peptides for food, nutraceutical and cosmetic use.",
+    specs: [["Source", "Marine (cold water)"], ["Collagen protein", "≥ 96% (lab tested)"], ["Protein (observed)", "90% (on dry basis)"], ["Moisture (max)", "6%"], ["Fat (max)", "1%"], ["Ash (max)", "3%"], ["Form", "Collagen peptides (fine powder)"], ["Colour", "Off white"], ["Solubility", "High (water soluble)"], ["Application", "Food, nutraceutical, cosmetic, aquaculture and animal feed"]] },
 ];
 
 export const applications = [

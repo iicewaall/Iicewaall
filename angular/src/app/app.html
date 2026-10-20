@@ -32,15 +32,22 @@
     <div class="wrap">
       <p class="eyebrow">Our Range</p>
       <h2>Premium Marine Proteins</h2>
-      <p class="lead">Five marine ingredients, each processed from carefully sourced Nordic catch and packed in sealed 50 kg drums.</p>
+      <p class="lead">Six marine ingredients, each processed from carefully sourced Nordic catch and packed in sealed 50 kg drums.</p>
       <div class="grid products">
-        @for (p of products; track p.name) {
+        @for (p of products; track p.slug) {
           <article class="card product">
-            <img [src]="'assets/' + p.img" [alt]="'IICE WAALL ' + p.name + ', 50 kg drum, made in ' + p.country" loading="lazy" width="290" height="340" />
+            <img [src]="'assets/front-' + p.slug + '.webp'" [alt]="'IICE WAALL ' + p.name + ', 50 kg drum, made in ' + p.country" loading="lazy" width="560" height="808" />
             <div>
               <h3>{{ p.name }}</h3>
               <p class="origin">{{ p.flag }} Made in {{ p.country }} · 50 kg</p>
               <p>{{ p.text }}</p>
+              <details class="specs">
+                <summary>Specifications</summary>
+                <dl>
+                  @for (sp of p.specs; track sp[0]) { <dt>{{ sp[0] }}</dt><dd>{{ sp[1] }}</dd> }
+                </dl>
+                <a [href]="'assets/back-' + p.slug + '.webp'" target="_blank" rel="noopener">View full label</a>
+              </details>
             </div>
           </article>
         }
