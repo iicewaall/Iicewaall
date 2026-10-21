@@ -71,7 +71,7 @@ export class App implements OnInit, OnDestroy {
   ];
   protected usd(n: number): string { return '$ ' + n.toLocaleString('en-US', { maximumFractionDigits: 0 }); }
   protected tonsPrice(p: (typeof products)[number], tons: number): number { return Math.round(parseFloat(p.price) * tons * 1000); }
-  // Offer countdown: 45 days from launch, ends 5 Dec 2026 at midnight Copenhagen time; the box hides after that
+  // Offer countdown: 45 days from launch, ends 5 Dec 2026 at midnight Copenhagen time; after that only the timer hides, the offer prices stay
   private static readonly OFFER_END = Date.parse('2026-12-05T23:59:59+01:00');
   protected readonly now = signal(Date.now());
   protected offerLeft(): { d: number; h: number; m: number; s: number } | null {
