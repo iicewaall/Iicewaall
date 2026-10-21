@@ -148,12 +148,13 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .pop-grid > * { min-width: 0; } .pop-grid h1 { overflow-wrap: anywhere; hyphens: auto; }
 .pop-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 36px; align-items: start; }
 .pop-grid img { width: 100%; height: auto; border-radius: 14px; background: var(--ice); }
-.yield { margin-top: 16px; padding: 14px 18px; border-radius: 14px; background: #f3f9ec; border: 2px solid var(--green); }
-.yield h3 { margin: 0; font-size: 18px; color: var(--navy); }
-.yield-note { margin: 2px 0 10px; color: var(--muted); font-size: 14px; }
-.yield ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-.yield li { font-size: 17px; color: var(--navy); }
-.yield li span { color: var(--green-dk); margin: 0 4px; }
+.yield { margin-top: 18px; padding: 20px 24px; border-radius: 16px; background: var(--green); color: #fff; box-shadow: 0 8px 22px rgba(62, 104, 26, .25); }
+.yield h3 { margin: 0; font-size: 24px; color: #fff; }
+.yield-note { margin: 4px 0 14px; color: #eef7e2; font-size: 16px; }
+.yield ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.yield li { font-size: 22px; color: #fff; padding: 10px 14px; border-radius: 12px; background: rgba(255, 255, 255, .16); }
+.yield li b { font-size: 26px; }
+.yield li span { color: #fff; margin: 0 6px; }
 .pop-text { color: var(--muted); font-size: 17px; margin-bottom: 16px; }
 .pp h3 { margin: 6px 0 10px; }
 .pop-specs { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; font-size: 15px; }
