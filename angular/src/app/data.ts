@@ -260,6 +260,7 @@ export const markets = [
   ["Poland", "Warsaw"],
   ["Denmark", "Copenhagen"],
   ["Norway", "Oslo"],
+  ["Svalbard Islands, Norway", "Longyearbyen"],
   ["Sweden", "Stockholm"],
   ["Finland", "Helsinki"],
   ["Iceland", "Reykjavík"],

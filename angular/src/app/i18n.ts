@@ -61,6 +61,7 @@ export const T: Record<string, [string, string]> = {
   "Fresh to the drum": ["Frisk helt til tromlen", "Fersk helt til fatet"],
   "Antarctic Krill Protein": ["Antarktisk krillprotein", "Antarktisk krillprotein"],
   "Norway": ["Norge", "Norge"],
+  "Svalbard Islands, Norway": ["Svalbardøerne, Norge", "Svalbard, Norge"],
   "Denmark": ["Danmark", "Danmark"],
   "Krill protein meal from Antarctic krill (Euphausia superba), rich in amino acids and natural omega-3.": ["Krillproteinmel fra antarktisk krill (Euphausia superba), rigt på aminosyrer og naturlig omega-3.", "Krillproteinmel fra antarktisk krill (Euphausia superba), rikt på aminosyrer og naturlig omega-3."],
   "Source": ["Kilde", "Kilde"],
