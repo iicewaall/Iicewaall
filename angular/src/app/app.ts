@@ -67,13 +67,23 @@ export class App implements OnInit, OnDestroy {
   // 10-ton offer: price per kg × 10,000 kg, then $1,000 off
   protected usd(n: number): string { return '$ ' + n.toLocaleString('en-US', { maximumFractionDigits: 0 }); }
   protected tenTons(p: (typeof products)[number]): number { return Math.round(parseFloat(p.price) * 10000); }
+  // Offer countdown: 45 days from launch, ends 5 Dec 2026 at midnight Copenhagen time; the box hides after that
+  private static readonly OFFER_END = Date.parse('2026-12-05T23:59:59+01:00');
+  protected readonly now = signal(Date.now());
+  protected offerLeft(): { d: number; h: number; m: number; s: number } | null {
+    const ms = App.OFFER_END - this.now();
+    if (ms <= 0) return null;
+    const t = Math.floor(ms / 1000);
+    return { d: Math.floor(t / 86400), h: Math.floor(t / 3600) % 24, m: Math.floor(t / 60) % 60, s: t % 60 };
+  }
+  protected pad(n: number): string { return n.toString().padStart(2, '0'); }
   protected details(p: (typeof products)[number]): { title: string; items: string[][] }[] { return ('details' in p && p.details) || []; }
   protected paused = false;
   private timer?: ReturnType<typeof setInterval>;
 
   ngOnInit() {
     this.applyLang();
-    if (this.page) { window.scrollTo(0, 0); return; }
+    if (this.page) { window.scrollTo(0, 0); this.timer = setInterval(() => this.now.set(Date.now()), 1000); return; }
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       this.timer = setInterval(() => { if (!this.paused && !document.hidden) this.go(this.slide() + 1); }, 5000);
     }
