@@ -55,6 +55,7 @@ export const T: Record<string, [string, string]> = {
   "tons": ["tons", "tonn"],
   "4,000": ["4.000", "4 000"],
   "6,667": ["6.667", "6 667"],
+  "10,000": ["10.000", "10 000"],
   "bags of feed": ["poser foder", "sekker fôr"],
   "Recommended dosage: 3 kg per 100 kg of feed": ["Anbefalet dosering: 3 kg pr. 100 kg foder", "Anbefalt dosering: 3 kg per 100 kg fôr"],
   "(3% inclusion rate)": ["(3 % iblandingsrate)", "(3 % innblandingsandel)"],
