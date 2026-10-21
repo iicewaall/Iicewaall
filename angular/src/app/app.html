@@ -162,7 +162,17 @@
   <div class="wrap">
     <a class="back" href="./#products">{{ t('← All products') }}</a>
     <div class="pop-grid">
-      <img [src]="'assets/back-' + page.slug + '.webp'" [alt]="t('Back label of') + ' IICE WAALL ' + t(page.name)" width="900" height="1299" />
+      <div class="pop-media">
+        <img [src]="'assets/back-' + page.slug + '.webp'" [alt]="t('Back label of') + ' IICE WAALL ' + t(page.name)" width="900" height="1299" />
+        <div class="yield">
+          <h3>{{ t('How much feed does it make?') }}</h3>
+          <p class="yield-note">{{ t('At 3 kg per 100 kg of feed (50 kg feed bags)') }}</p>
+          <ul>
+            <li><b>6 {{ t('tons') }}</b> <span aria-hidden="true">→</span> <b>{{ t('4,000') }}</b> {{ t('bags of feed') }}</li>
+            <li><b>10 {{ t('tons') }}</b> <span aria-hidden="true">→</span> <b>{{ t('6,667') }}</b> {{ t('bags of feed') }}</li>
+          </ul>
+        </div>
+      </div>
       <div>
         <p class="eyebrow">{{ page.flag }} {{ t('Made in') }} {{ t(page.country) }} · 50 kg</p>
         <h1>{{ t(page.name) }}</h1>
