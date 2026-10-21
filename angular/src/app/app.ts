@@ -64,6 +64,9 @@ export class App implements OnInit, OnDestroy {
     const m = location.pathname.match(/\/product\/([a-z-]+)\/?$/);
     return m ? products.find((p) => p.slug === m[1]) ?? null : null;
   })();
+  // 10-ton offer: price per kg × 10,000 kg, then $1,000 off
+  protected usd(n: number): string { return '$ ' + n.toLocaleString('en-US', { maximumFractionDigits: 0 }); }
+  protected tenTons(p: (typeof products)[number]): number { return Math.round(parseFloat(p.price) * 10000); }
   protected details(p: (typeof products)[number]): { title: string; items: string[][] }[] { return ('details' in p && p.details) || []; }
   protected paused = false;
   private timer?: ReturnType<typeof setInterval>;
