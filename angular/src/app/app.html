@@ -182,7 +182,6 @@
         <dl class="pop-specs">
           @for (sp of page.specs; track sp[0]) { <dt>{{ t(sp[0]) }}</dt><dd>{{ t(sp[1]) }}</dd> }
         </dl>
-        @if (offerLeft(); as left) {
         <div class="offer"><span aria-hidden="true">🎁</span>
           <div>
             @for (o of offers; track o.tons) {
@@ -195,6 +194,7 @@
                 </dl>
               </div>
             }
+            @if (offerLeft(); as left) {
             <p class="offer-ends">{{ t('Offer ends in') }}</p>
             <div class="countdown" role="timer" aria-live="off">
               <span><b>{{ left.d }}</b>{{ t('Days') }}</span>
@@ -202,9 +202,9 @@
               <span><b>{{ pad(left.m) }}</b>{{ t('Minutes') }}</span>
               <span><b>{{ pad(left.s) }}</b>{{ t('Seconds') }}</span>
             </div>
+            }
           </div>
         </div>
-        }
         <p class="dose"><span aria-hidden="true">⚖️</span> <span><b>{{ t('Recommended dosage: 3 kg per 100 kg of feed') }}</b> <small>{{ t('(3% inclusion rate)') }}</small></span></p>
         <p class="moq"><b>{{ t('Minimum order: 6 tons') }}</b> <span>{{ t('(120 drums of 50 kg)') }}</span></p>
       </div>
