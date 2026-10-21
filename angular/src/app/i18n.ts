@@ -38,6 +38,8 @@ export const T: Record<string, [string, string]> = {
   "We import our marine ingredients through a network of European suppliers, producers and research institutes.": ["Vi importerer vores marine ingredienser gennem et netværk af europæiske leverandører, producenter og forskningsinstitutter.", "Vi importerer våre marine ingredienser gjennom et nettverk av europeiske leverandører, produsenter og forskningsinstitutter."],
   "About Us": ["Om os", "Om oss"],
   "IICE WAALL brings premium marine proteins from the pure waters of Norway and Denmark to feed, pet food and nutrition manufacturers. We focus on clean sourcing, reliable bulk supply and consistent quality, so our partners can build better products.": ["IICE WAALL leverer premium marine proteiner fra de rene farvande i Norge og Danmark til producenter af foder, dyrefoder og ernæring. Vi fokuserer på rene råvarer, pålidelig bulklevering og ensartet kvalitet, så vores partnere kan skabe bedre produkter.", "IICE WAALL leverer premium marine proteiner fra de rene farvannene i Norge og Danmark til produsenter av fôr, dyrefôr og ernæring. Vi fokuserer på rene råvarer, pålitelig bulklevering og jevn kvalitet, slik at partnerne våre kan lage bedre produkter."],
+  "Recommended dosage: 3 kg per 100 kg of feed": ["Anbefalet dosering: 3 kg pr. 100 kg foder", "Anbefalt dosering: 3 kg per 100 kg fôr"],
+  "(3% inclusion rate)": ["(3 % iblandingsrate)", "(3 % innblandingsandel)"],
   "Minimum order: 6 tons": ["Minimumsordre: 6 tons", "Minste bestilling: 6 tonn"],
   "(120 drums of 50 kg)": ["(120 tromler á 50 kg)", "(120 fat à 50 kg)"],
   "(opens in a new tab)": ["(åbner i en ny fane)", "(åpnes i en ny fane)"],
