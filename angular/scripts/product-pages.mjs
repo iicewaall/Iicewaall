@@ -11,4 +11,6 @@ for (const slug of slugs) {
   mkdirSync(dir, { recursive: true });
   copyFileSync(new URL("index.html", dist), new URL("index.html", dir));
 }
+// Unknown URLs: GitHub Pages serves 404.html, which shows the home page
+copyFileSync(new URL("index.html", dist), new URL("404.html", dist));
 console.log(`product pages: ${slugs.join(", ")}`);

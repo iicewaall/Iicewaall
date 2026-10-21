@@ -33,9 +33,12 @@ export class App implements OnInit, OnDestroy {
     try { localStorage.setItem('lang', l); } catch {}
     this.applyLang();
   }
+  private static readonly TITLE = 'IICE WAALL – Premium Marine Proteins from Nordic Waters';
+  private static readonly DESC = 'IICE WAALL premium marine proteins: Antarctic krill, salmon, tuna, herring and anchovy protein and marine collagen peptides from pure Nordic waters, packed in 50 kg drums.';
   private applyLang() {
     document.documentElement.lang = LANGS.find((x) => x.code === this.lang())!.html;
-    if (this.page) document.title = `${this.t(this.page.name)} – IICE WAALL`;
+    document.title = this.page ? `${this.t(this.page.name)} – IICE WAALL` : this.t(App.TITLE);
+    document.querySelector('meta[name="description"]')?.setAttribute('content', this.t(App.DESC));
   }
 
 
