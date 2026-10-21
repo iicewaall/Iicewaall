@@ -64,9 +64,13 @@ export class App implements OnInit, OnDestroy {
     const m = location.pathname.match(/\/product\/([a-z-]+)\/?$/);
     return m ? products.find((p) => p.slug === m[1]) ?? null : null;
   })();
-  // 10-ton offer: price per kg × 10,000 kg, then $1,000 off
+  // Bulk offers: price per kg × tons × 1,000 kg, then a fixed discount
+  protected readonly offers = [
+    { tons: 10, off: 1000, title: 'Special offer: $1,000 off on orders of 10 tons or more', drums: '(200 drums of 50 kg)' },
+    { tons: 15, off: 1500, title: 'Special offer: $1,500 off on orders of 15 tons or more', drums: '(300 drums of 50 kg)' },
+  ];
   protected usd(n: number): string { return '$ ' + n.toLocaleString('en-US', { maximumFractionDigits: 0 }); }
-  protected tenTons(p: (typeof products)[number]): number { return Math.round(parseFloat(p.price) * 10000); }
+  protected tonsPrice(p: (typeof products)[number], tons: number): number { return Math.round(parseFloat(p.price) * tons * 1000); }
   // Offer countdown: 45 days from launch, ends 5 Dec 2026 at midnight Copenhagen time; the box hides after that
   private static readonly OFFER_END = Date.parse('2026-12-05T23:59:59+01:00');
   protected readonly now = signal(Date.now());
