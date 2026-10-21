@@ -45,7 +45,7 @@
       <div class="grid products">
         @for (p of products; track p.slug) {
           <article class="card product">
-            <a [href]="'product/' + p.slug + '/'" class="card-img"><img [src]="'assets/front-' + p.slug + '.webp'" [alt]="'IICE WAALL ' + t(p.name) + ', ' + t('50 kg drum') + ', ' + t('Made in') + ' ' + t(p.country)" loading="lazy" width="560" height="808" /></a>
+            <a [href]="'product/' + p.slug + '/'" class="card-img"><img [src]="'assets/front-' + p.slug + '.webp?v=2'" [alt]="'IICE WAALL ' + t(p.name) + ', ' + t('50 kg drum') + ', ' + t('Made in') + ' ' + t(p.country)" loading="lazy" width="560" height="808" /></a>
             <div>
               <h3><a [href]="'product/' + p.slug + '/'">{{ t(p.name) }}</a></h3>
               <p class="origin">{{ p.flag }} {{ t('Made in') }} {{ t(p.country) }} · 50 kg</p>
