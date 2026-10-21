@@ -185,12 +185,16 @@
         @if (offerLeft(); as left) {
         <div class="offer"><span aria-hidden="true">🎁</span>
           <div>
-            <b>{{ t('Special offer: $1,000 off on orders of 10 tons or more') }}</b> <small>{{ t('(200 drums of 50 kg)') }}</small>
-            <dl class="offer-calc">
-              <dt>{{ t('Price for 10 tons') }}</dt><dd>{{ usd(tenTons(page)) }}</dd>
-              <dt>{{ t('Offer discount') }}</dt><dd>− $ 1,000</dd>
-              <dt class="total">{{ t('Offer price for 10 tons') }}</dt><dd class="total">{{ usd(tenTons(page) - 1000) }}</dd>
-            </dl>
+            @for (o of offers; track o.tons) {
+              <div class="offer-tier">
+                <b>{{ t(o.title) }}</b> <small>{{ t(o.drums) }}</small>
+                <dl class="offer-calc">
+                  <dt>{{ t('Price for') }} {{ o.tons }} {{ t('tons') }}</dt><dd>{{ usd(tonsPrice(page, o.tons)) }}</dd>
+                  <dt>{{ t('Offer discount') }}</dt><dd>− {{ usd(o.off) }}</dd>
+                  <dt class="total">{{ t('Offer price for') }} {{ o.tons }} {{ t('tons') }}</dt><dd class="total">{{ usd(tonsPrice(page, o.tons) - o.off) }}</dd>
+                </dl>
+              </div>
+            }
             <p class="offer-ends">{{ t('Offer ends in') }}</p>
             <div class="countdown" role="timer" aria-live="off">
               <span><b>{{ left.d }}</b>{{ t('Days') }}</span>
