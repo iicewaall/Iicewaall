@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { applications, highlights, markets, products, projects, quality } from './data';
 import { DEFAULT_LANG, Lang, LANGS, T } from './i18n';
+import { festivals } from './festivals';
 
 @Component({
   selector: 'app-root',
@@ -74,6 +75,15 @@ export class App implements OnInit, OnDestroy {
   // Offer countdown: 45 days from launch, ends 5 Dec 2026 at midnight Copenhagen time; after that only the timer hides, the offer prices stay
   private static readonly OFFER_END = Date.parse('2026-12-05T23:59:59+01:00');
   protected readonly now = signal(Date.now());
+  // Festival greeting: every festival whose dates include today (?date=YYYY-MM-DD previews another day)
+  protected readonly fest = (() => {
+    const q = new URLSearchParams(location.search).get('date');
+    const d = new Date(); const today = q && /^\d{4}-\d{2}-\d{2}$/.test(q) ? q
+      : `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    return festivals.filter((f) => f.from <= today && today <= f.to);
+  })();
+  protected festClosed = false;
+  protected readonly confetti = Array.from({ length: 14 }, (_, i) => i);
   protected offerLeft(): { d: number; h: number; m: number; s: number } | null {
     const ms = App.OFFER_END - this.now();
     if (ms <= 0) return null;

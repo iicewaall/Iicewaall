@@ -8,6 +8,21 @@
   </div>
 </header>
 
+@if (fest.length && !festClosed) {
+  <aside class="fest" [attr.aria-label]="t('Festival greetings')">
+    <div class="wrap fest-inner">
+      <p>
+        @for (f of fest; track f.greet) { <span class="fest-item"><span class="fest-icon" aria-hidden="true">{{ f.icon }}</span> <b>{{ t(f.greet) }}</b></span> }
+        <span class="fest-sub">{{ t('Warm wishes from IICE WAALL') }}</span>
+      </p>
+      <button type="button" class="fest-close" [attr.aria-label]="t('Close')" (click)="festClosed = true">×</button>
+    </div>
+  </aside>
+  <div class="fest-rain" aria-hidden="true">
+    @for (i of confetti; track i) { <span [style.left.%]="i * 7 + 2" [style.animation-delay.s]="(i % 5) * .45">{{ fest[i % fest.length].icon }}</span> }
+  </div>
+}
+
 @if (!page) {
 <main>
   <section class="hero" [attr.aria-label]="t('Premium marine proteins from pure Nordic waters')">
