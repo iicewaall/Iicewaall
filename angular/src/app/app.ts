@@ -82,7 +82,6 @@ export class App implements OnInit, OnDestroy {
       : `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
     return festivals.filter((f) => f.from <= today && today <= f.to);
   })();
-  protected festClosed = false;
   protected readonly confetti = Array.from({ length: 14 }, (_, i) => i);
   protected offerLeft(): { d: number; h: number; m: number; s: number } | null {
     const ms = App.OFFER_END - this.now();
