@@ -189,6 +189,7 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .skretting { position: relative; background: #fff; }
 .person-card { background: #fff; text-align: center; }
 .about-person { width: 100%; max-width: 340px; margin: 0 0 28px; }
+.about-nrc { width: 100%; max-width: 520px; margin-top: 28px; }
 .pc-logo { display: block; padding: 14px 18px 8px; }
 .pc-logo img { display: block; width: 100%; max-width: 240px; height: auto; margin: 0 auto; }
 .person-card .pc-photo { display: block; width: 100%; max-width: 300px; height: auto; margin: 0 auto; border-radius: 12px; }
