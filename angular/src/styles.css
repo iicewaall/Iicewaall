@@ -227,4 +227,13 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .fest-rain span { position: absolute; top: -40px; font-size: 24px; opacity: .85; animation: fest-fall 10s linear infinite; }
 @keyframes fest-bob { 50% { transform: translateY(-3px) rotate(-8deg); } }
 @keyframes fest-fall { to { transform: translateY(calc(100vh + 80px)) rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) { .fest-icon { animation: none; } .fest-rain { display: none; } }
+/* Burning diya (oil lamp) for Diwali-type festivals: flickering flame and soft glow; falls gently without tumbling */
+.diya { display: block; width: 44px; height: 44px; overflow: visible; filter: drop-shadow(0 0 6px rgba(255, 170, 40, .7)); }
+.fest-icon .diya { display: inline-block; width: 34px; height: 34px; vertical-align: -8px; }
+.diya-flame { transform-origin: 32px 33px; animation: diya-flicker .5s ease-in-out infinite alternate; }
+.diya-glow { transform-origin: 32px 26px; animation: diya-glow 1.4s ease-in-out infinite alternate; }
+.fest-rain span.diya-fall { animation-name: diya-fall; opacity: 1; }
+@keyframes diya-flicker { 0% { transform: scale(1, 1) skewX(0); } 35% { transform: scale(.94, 1.08) skewX(-4deg); } 70% { transform: scale(1.04, .95) skewX(3deg); } 100% { transform: scale(.97, 1.05) skewX(-2deg); } }
+@keyframes diya-glow { from { opacity: .55; transform: scale(.9); } to { opacity: 1; transform: scale(1.15); } }
+@keyframes diya-fall { 0% { transform: translate(0, 0); } 25% { transform: translate(14px, 27vh); } 50% { transform: translate(-10px, 54vh); } 75% { transform: translate(12px, 81vh); } 100% { transform: translate(0, calc(100vh + 80px)); } }
+@media (prefers-reduced-motion: reduce) { .fest-icon { animation: none; } .fest-rain { display: none; } .diya-flame, .diya-glow { animation: none; } }
