@@ -101,6 +101,12 @@ export class App implements OnInit, OnDestroy {
   ngOnInit() {
     this.applyLang();
     if (this.page) { window.scrollTo(0, 0); this.timer = setInterval(() => this.now.set(Date.now()), 1000); return; }
+    // Home always opens at the top (no restored scroll, no old #products in the address),
+    // except when coming back from a product page via "All products"
+    history.scrollRestoration = 'manual';
+    const back = location.hash === '#products' && document.referrer.includes('/product/');
+    if (location.hash && !back) history.replaceState(null, '', location.pathname + location.search);
+    setTimeout(() => (back ? document.getElementById('products')?.scrollIntoView() : window.scrollTo(0, 0)));
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       this.timer = setInterval(() => { if (!this.paused && !document.hidden) this.go(this.slide() + 1); }, 5000);
     }
