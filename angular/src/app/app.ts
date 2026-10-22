@@ -83,6 +83,10 @@ export class App implements OnInit, OnDestroy {
     return festivals.filter((f) => f.from <= today && today <= f.to);
   })();
   protected readonly confetti = Array.from({ length: 14 }, (_, i) => i);
+  // Christmas look: snowfall, twinkling light string and a decorated tree
+  protected readonly xmas = this.fest.some((f) => f.icon === '🎄');
+  protected readonly snow = Array.from({ length: 46 }, (_, i) => i);
+  protected readonly lights = Array.from({ length: 40 }, (_, i) => i);
   protected offerLeft(): { d: number; h: number; m: number; s: number } | null {
     const ms = App.OFFER_END - this.now();
     if (ms <= 0) return null;

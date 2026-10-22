@@ -236,4 +236,21 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 @keyframes diya-flicker { 0% { transform: scale(1, 1) skewX(0); } 35% { transform: scale(.94, 1.08) skewX(-4deg); } 70% { transform: scale(1.04, .95) skewX(3deg); } 100% { transform: scale(.97, 1.05) skewX(-2deg); } }
 @keyframes diya-glow { from { opacity: .55; transform: scale(.9); } to { opacity: 1; transform: scale(1.15); } }
 @keyframes diya-fall { 0% { transform: translate(0, 0); } 25% { transform: translate(14px, 27vh); } 50% { transform: translate(-10px, 54vh); } 75% { transform: translate(12px, 81vh); } 100% { transform: translate(0, calc(100vh + 80px)); } }
-@media (prefers-reduced-motion: reduce) { .fest-icon { animation: none; } .fest-rain { display: none; } .diya-flame, .diya-glow { animation: none; } }
+/* Christmas: deep red banner with gold text, twinkling light string, decorated tree, snowfall */
+.fest.xmas { position: sticky; background: linear-gradient(135deg, #8e0e1f, #c8102e 50%, #8e0e1f); border-bottom: 0; color: #fff; padding-bottom: 14px; }
+.fest.xmas b { color: #ffe38a; font-size: 22px; letter-spacing: .3px; text-shadow: 0 1px 0 rgba(0, 0, 0, .35), 0 0 12px rgba(255, 215, 90, .45); }
+.fest.xmas .fest-sub { color: #ffe9ec; font-size: 15px; }
+.fest.xmas .fest-icon { animation: none; }
+.xtree { display: inline-block; width: 40px; height: 46px; vertical-align: -12px; overflow: visible; }
+.xt-halo { transform-origin: 32px 9px; animation: xt-halo 1.6s ease-in-out infinite alternate; }
+.xt-balls circle { animation: xt-twinkle 1.2s ease-in-out infinite alternate; }
+.xt-balls circle:nth-child(2n) { animation-delay: .4s; } .xt-balls circle:nth-child(3n) { animation-delay: .8s; }
+.xmas-lights { position: absolute; left: 0; right: 0; bottom: 2px; display: flex; justify-content: space-around; height: 14px; background: radial-gradient(ellipse at 50% -40%, transparent 60%, rgba(0, 0, 0, .35) 62%, transparent 66%) 0 0 / 32px 14px repeat-x; }
+.xmas-lights i { width: 7px; height: 10px; margin-top: 4px; border-radius: 50%; background: #ffd23f; box-shadow: 0 0 8px 2px currentColor; color: #ffd23f; animation: xl-twinkle 1.4s ease-in-out infinite alternate; }
+.xmas-lights i:nth-child(4n+1) { background: #ff4d5e; color: #ff4d5e; } .xmas-lights i:nth-child(4n+2) { background: #43e07a; color: #43e07a; } .xmas-lights i:nth-child(4n+3) { background: #4fb3ff; color: #4fb3ff; }
+.flake { position: absolute; top: -12px; border-radius: 50%; background: #fff; box-shadow: 0 0 6px 1px rgba(150, 190, 230, .9); opacity: .95; animation: snow-fall 12s linear infinite; }
+@keyframes snow-fall { 0% { transform: translate(0, 0); } 25% { transform: translate(18px, 26vh); } 50% { transform: translate(-12px, 52vh); } 75% { transform: translate(16px, 78vh); } 100% { transform: translate(0, calc(100vh + 30px)); } }
+@keyframes xt-halo { from { opacity: .5; transform: scale(.8); } to { opacity: 1; transform: scale(1.3); } }
+@keyframes xt-twinkle { from { opacity: .45; } to { opacity: 1; } }
+@keyframes xl-twinkle { from { opacity: .35; box-shadow: 0 0 2px 0 currentColor; } to { opacity: 1; box-shadow: 0 0 10px 3px currentColor; } }
+@media (prefers-reduced-motion: reduce) { .fest-icon { animation: none; } .fest-rain { display: none; } .diya-flame, .diya-glow, .xt-halo, .xt-balls circle, .xmas-lights i { animation: none; } }
