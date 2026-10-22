@@ -81,6 +81,7 @@ export const T: Record<string, [string, string]> = {
   "Happy Danish Constitution Day!": ["Glædelig grundlovsdag!", "God dansk grunnlovsdag!"],
   "Happy Midsummer!": ["Glædelig sankthans!", "God sankthans!"],
   "Happy Navratri & Dussehra!": ["Glædelig Navratri og Dussehra!", "God Navratri og Dussehra!"],
+  "Head Engineer": ["Overingeniør", "Overingeniør"],
   "Recommended dosage: 3 kg per 100 kg of feed": ["Anbefalet dosering: 3 kg pr. 100 kg foder", "Anbefalt dosering: 3 kg per 100 kg fôr"],
   "(3% inclusion rate)": ["(3 % iblandingsrate)", "(3 % innblandingsandel)"],
   "Minimum order: 6 tons": ["Minimumsordre: 6 tons", "Minste bestilling: 6 tonn"],
