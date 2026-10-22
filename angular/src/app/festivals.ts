@@ -1,0 +1,33 @@
+// World festivals shown as a greeting banner on the days they are celebrated (visitor's local date).
+// Lunar-calendar dates (Diwali, Eid, Holi, Chinese New Year, Vesak …) move every year:
+// add the next year's dates here before the list runs out.
+export const festivals: { from: string; to: string; icon: string; greet: string }[] = [
+  { from: '2026-10-31', to: '2026-10-31', icon: '🎃', greet: 'Happy Halloween!' },
+  { from: '2026-11-06', to: '2026-11-09', icon: '🪔', greet: 'Happy Diwali!' },
+  { from: '2026-11-24', to: '2026-11-24', icon: '🙏', greet: 'Happy Guru Nanak Jayanti!' },
+  { from: '2026-11-26', to: '2026-11-26', icon: '🦃', greet: 'Happy Thanksgiving!' },
+  { from: '2026-12-04', to: '2026-12-12', icon: '🕎', greet: 'Happy Hanukkah!' },
+  { from: '2026-12-13', to: '2026-12-13', icon: '🕯️', greet: 'Happy St. Lucia Day!' },
+  { from: '2026-12-20', to: '2026-12-26', icon: '🎄', greet: 'Merry Christmas!' },
+  { from: '2026-12-31', to: '2027-01-02', icon: '🎆', greet: 'Happy New Year!' },
+  { from: '2027-01-13', to: '2027-01-15', icon: '🪁', greet: 'Happy Makar Sankranti, Pongal & Lohri!' },
+  { from: '2027-02-06', to: '2027-02-08', icon: '🧧', greet: 'Happy Chinese New Year!' },
+  { from: '2027-02-09', to: '2027-02-10', icon: '🌙', greet: 'Ramadan Mubarak!' },
+  { from: '2027-03-09', to: '2027-03-11', icon: '🌙', greet: 'Eid Mubarak!' },
+  { from: '2027-03-21', to: '2027-03-22', icon: '🎨', greet: 'Happy Holi!' },
+  { from: '2027-03-26', to: '2027-03-29', icon: '🐣', greet: 'Happy Easter!' },
+  { from: '2027-04-13', to: '2027-04-15', icon: '💦', greet: 'Happy Songkran!' },
+  { from: '2027-05-16', to: '2027-05-18', icon: '🐑', greet: 'Eid al-Adha Mubarak!' },
+  { from: '2027-05-17', to: '2027-05-17', icon: '🇳🇴', greet: 'Happy Norwegian Constitution Day!' },
+  { from: '2027-05-20', to: '2027-05-20', icon: '🪷', greet: 'Happy Vesak!' },
+  { from: '2027-06-05', to: '2027-06-05', icon: '🇩🇰', greet: 'Happy Danish Constitution Day!' },
+  { from: '2027-06-23', to: '2027-06-24', icon: '🔥', greet: 'Happy Midsummer!' },
+  { from: '2027-09-30', to: '2027-10-09', icon: '🪔', greet: 'Happy Navratri & Dussehra!' },
+  { from: '2027-10-27', to: '2027-10-30', icon: '🪔', greet: 'Happy Diwali!' },
+  { from: '2027-10-31', to: '2027-10-31', icon: '🎃', greet: 'Happy Halloween!' },
+  { from: '2027-11-25', to: '2027-11-25', icon: '🦃', greet: 'Happy Thanksgiving!' },
+  { from: '2027-12-13', to: '2027-12-13', icon: '🕯️', greet: 'Happy St. Lucia Day!' },
+  { from: '2027-12-20', to: '2027-12-26', icon: '🎄', greet: 'Merry Christmas!' },
+  { from: '2027-12-24', to: '2028-01-01', icon: '🕎', greet: 'Happy Hanukkah!' },
+  { from: '2027-12-31', to: '2028-01-02', icon: '🎆', greet: 'Happy New Year!' },
+];
