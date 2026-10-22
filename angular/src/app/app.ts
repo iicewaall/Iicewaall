@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { applications, highlights, markets, products, projects, quality } from './data';
 import { DEFAULT_LANG, Lang, LANGS, T } from './i18n';
-import { festivals } from './festivals';
+import { festivalsOn } from './festivals';
 
 @Component({
   selector: 'app-root',
@@ -80,7 +80,7 @@ export class App implements OnInit, OnDestroy {
     const q = new URLSearchParams(location.search).get('date');
     const d = new Date(); const today = q && /^\d{4}-\d{2}-\d{2}$/.test(q) ? q
       : `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-    return festivals.filter((f) => f.from <= today && today <= f.to);
+    return festivalsOn(today);
   })();
   protected readonly confetti = Array.from({ length: 14 }, (_, i) => i);
   // Christmas look: snowfall, twinkling light string and a decorated tree
