@@ -217,15 +217,14 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .markets b { color: #fff; font-weight: 700; }
 
 /* Festival greeting banner */
-.fest { background: linear-gradient(90deg, #fff4d6, #ffe7a3, #fff4d6); border-bottom: 2px solid #f0b429; color: #5c3a00; }
+.fest { position: sticky; top: 76px; z-index: 49; background: linear-gradient(90deg, #fff4d6, #ffe7a3, #fff4d6); border-bottom: 2px solid #f0b429; color: #5c3a00; }
 .fest-inner { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 10px 0; }
 .fest p { margin: 0; text-align: center; font-size: 17px; }
 .fest-item { display: inline-block; margin: 0 8px; }
 .fest-icon { display: inline-block; font-size: 22px; animation: fest-bob 1.6s ease-in-out infinite; }
 .fest-sub { display: block; font-size: 14px; color: #8a6416; }
-.fest-close { flex: none; width: 30px; height: 30px; border: 0; border-radius: 50%; background: rgba(122, 75, 0, .12); color: #5c3a00; font-size: 20px; line-height: 1; cursor: pointer; }
 .fest-rain { position: fixed; inset: 0; z-index: 60; pointer-events: none; overflow: hidden; }
-.fest-rain span { position: absolute; top: -40px; font-size: 26px; animation: fest-fall 5s linear forwards; }
+.fest-rain span { position: absolute; top: -40px; font-size: 24px; opacity: .85; animation: fest-fall 10s linear infinite; }
 @keyframes fest-bob { 50% { transform: translateY(-3px) rotate(-8deg); } }
-@keyframes fest-fall { to { transform: translateY(110vh) rotate(360deg); opacity: .2; } }
+@keyframes fest-fall { to { transform: translateY(calc(100vh + 80px)) rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .fest-icon { animation: none; } .fest-rain { display: none; } }
