@@ -60,7 +60,7 @@
       <div class="grid products">
         @for (p of products; track p.slug) {
           <article class="card product">
-            <a [href]="'product/' + p.slug + '/'" class="card-img"><img [src]="'assets/front-' + p.slug + '.webp?v=12'" [alt]="'IICE WAALL ' + t(p.name) + ', ' + t('50 kg drum') + ', ' + t('Made in') + ' ' + t(p.country)" loading="lazy" width="560" height="808" /></a>
+            <a [href]="'product/' + p.slug + '/'" class="card-img"><img [src]="'assets/front-' + p.slug + '.webp?v=13'" [alt]="'IICE WAALL ' + t(p.name) + ', ' + t('50 kg drum') + ', ' + t('Made in') + ' ' + t(p.country)" loading="lazy" width="560" height="808" /></a>
             <div>
               <h3><a [href]="'product/' + p.slug + '/'">{{ t(p.name) }}</a></h3>
               <p class="origin">{{ p.flag }} {{ t('Made in') }} {{ t(p.country) }} · 50 kg</p>
@@ -190,7 +190,7 @@
     <a class="back" href="./#products">{{ t('← All products') }}</a>
     <div class="pop-grid">
       <div class="pop-media">
-        <img [src]="'assets/back-' + page.slug + '.webp?v=11'" [alt]="t('Back label of') + ' IICE WAALL ' + t(page.name)" width="900" height="1299" />
+        <img [src]="'assets/back-' + page.slug + '.webp?v=12'" [alt]="t('Back label of') + ' IICE WAALL ' + t(page.name)" width="900" height="1299" />
         <div class="yield">
           <h3>{{ t('How much feed does it make?') }}</h3>
           <p class="yield-note">{{ t('At 3 kg per 100 kg of feed (50 kg feed bags)') }}</p>
