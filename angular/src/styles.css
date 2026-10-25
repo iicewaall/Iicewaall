@@ -188,6 +188,11 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 .about-media { display: grid; gap: 22px; justify-items: center; }
 .about-ref { width: 100%; max-width: 480px; }
 .skretting { position: relative; background: #fff; }
+.imte-slider { position: relative; aspect-ratio: 3 / 2; }
+.imte-slider img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: imte-swap 8s infinite; }
+.imte-slider img + img { animation-delay: -4s; }
+@keyframes imte-swap { 0%, 42% { opacity: 1; } 50%, 92% { opacity: 0; } 100% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .imte-slider img { animation-duration: 16s; } }
 .person-card { background: #fff; text-align: center; }
 .about-person { width: 100%; max-width: 340px; margin: 0 0 28px; }
 .about-nrc { width: 100%; max-width: 520px; margin-top: 28px; }
