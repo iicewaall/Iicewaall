@@ -273,3 +273,10 @@ h3 { font-family: var(--display); color: var(--navy); font-size: 19px; }
 @keyframes xt-twinkle { from { opacity: .45; } to { opacity: 1; } }
 @keyframes xl-twinkle { from { opacity: .35; box-shadow: 0 0 2px 0 currentColor; } to { opacity: 1; box-shadow: 0 0 10px 3px currentColor; } }
 @media (prefers-reduced-motion: reduce) { .fest-icon { animation: none; } .fest-rain { display: none; } .diya-flame, .diya-glow, .xt-halo, .xt-balls circle, .xmas-lights i { animation: none; } }
+
+/* Drums alternate between the gold and the green label */
+.drum-swap { position: relative; display: block; }
+.drum-swap img { display: block; width: 100%; height: auto; }
+.drum-swap .alt { position: absolute; inset: 0; height: 100%; object-fit: contain; opacity: 0; animation: drum-swap 8s ease-in-out infinite; }
+@keyframes drum-swap { 0%, 40% { opacity: 0; } 50%, 90% { opacity: 1; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .drum-swap .alt { animation-duration: 20s; } }
