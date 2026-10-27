@@ -45,8 +45,6 @@ export class App implements OnInit, OnDestroy {
 
   // Hero slider: advances every 5 s, pauses on hover/focus and for reduced motion
   protected readonly slides = [
-    { src: 'slide-drums-gold', alt: 'IICE WAALL marine protein drums, gold label' },
-    { src: 'slide-drums-green', alt: 'IICE WAALL marine protein drums, green label' },
     { src: 'slide-4', alt: 'Research and quality reference: aquaculture feed trials at Nofima, Norway (photo: Nofima)' },
     { src: 'slide-5', alt: 'Research and quality reference: feed processing technology at Nofima, Norway (photo: Nofima)' },
     { src: 'slide-6', alt: 'Research and quality reference: fish growth and feed performance tanks at Nofima, Norway (photo: Nofima)' },
